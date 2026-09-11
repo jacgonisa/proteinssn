@@ -113,8 +113,10 @@ def interactive_plot(
             color=colors[cluster], size=12,
         )
     for u, v, data in graph.edges(data=True):
-        net.add_edge(u, v, value=float(data["pident"]),
-                     title=f"{data['pident']:.1f}% id")
+        title = f"{data['pident']:.1f}% id"
+        if "evalue" in data:
+            title += f", e={data['evalue']:.1e}"
+        net.add_edge(u, v, value=float(data["pident"]), title=title)
 
     net.save_graph(path)
     print(f"  interactive html  -> {path}", file=sys.stderr)

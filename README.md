@@ -38,7 +38,7 @@ That's it. You get a folder `laccase_demo_ssn/` with:
 
 | file | what it is |
 |------|-----------|
-| `*.edges.tsv`     | the network: `source  target  %identity` |
+| `*.edges.tsv`     | the network: `source  target  %identity  e-value` |
 | `*.clusters.tsv`  | which cluster each protein belongs to |
 | `*.network.png`   | static figure, nodes coloured by cluster |
 | `*.network.html`  | **interactive** network — open in a browser, pan/zoom/hover |

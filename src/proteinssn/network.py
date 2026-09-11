@@ -132,11 +132,11 @@ def _label_clusters(graph: nx.Graph) -> tuple[dict[str, str], list[str]]:
 
 
 def write_edges(result: NetworkResult, path: str) -> None:
-    """Write a tab-separated edge list: source, target, pident."""
+    """Write a tab-separated edge list: source, target, pident, evalue."""
     with open(path, "w") as out:
-        out.write("source\ttarget\tpident\n")
+        out.write("source\ttarget\tpident\tevalue\n")
         for u, v, data in result.graph.edges(data=True):
-            out.write(f"{u}\t{v}\t{data['pident']:.1f}\n")
+            out.write(f"{u}\t{v}\t{data['pident']:.1f}\t{data['evalue']:.2e}\n")
 
 
 def write_clusters(result: NetworkResult, path: str) -> None:

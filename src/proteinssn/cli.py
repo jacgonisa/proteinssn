@@ -108,7 +108,13 @@ def cmd_plot(args: argparse.Namespace) -> None:
             if len(row) < 2:
                 continue
             pident = float(row[2]) if len(row) > 2 else 100.0
-            graph.add_edge(row[0], row[1], pident=pident)
+            attrs = {"pident": pident}
+            if len(row) > 3:
+                try:
+                    attrs["evalue"] = float(row[3])
+                except ValueError:
+                    pass
+            graph.add_edge(row[0], row[1], **attrs)
 
     clusters, singletons = network._label_clusters(graph)
     result = network.NetworkResult(
