@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proteinssn"
+version = "0.1.0"
+description = "Build and visualise protein Sequence Similarity Networks (SSNs) from a FASTA file."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Jacobo González" }]
+keywords = ["bioinformatics", "protein", "sequence-similarity-network", "ssn", "diamond", "clustering"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "networkx>=2.6",
+    "pandas>=1.1",
+    "matplotlib>=3.3",
+    "pyvis>=0.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/jacgonisa/proteinssn"
+Source = "https://github.com/jacgonisa/proteinssn"
+
+[project.scripts]
+ssn = "proteinssn.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

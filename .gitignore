@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.venv/
+venv/
+
+# SSN outputs
+*_ssn/
+*.dmnd
+*.diamond.tsv
+*.edges.tsv
+*.clusters.tsv
+*.network.png
+*.network.html
+*.sweep.tsv
+*.sweep.png
+lib/           # pyvis vis.js assets dumped next to html
+
+# OS / editor
+.DS_Store
+.ipynb_checkpoints/

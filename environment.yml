@@ -1,0 +1,13 @@
+name: proteinssn
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.8
+  - diamond>=2.1
+  - networkx>=2.6
+  - pandas>=1.1
+  - matplotlib>=3.3
+  - pip
+  - pip:
+      - pyvis>=0.3
