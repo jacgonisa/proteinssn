@@ -118,7 +118,7 @@ The core SSN logic here — the all-vs-all comparison, reciprocal-hit cleaning,
 threshold-based edge filtering and connected-component clustering — is adapted
 from **[SSNetworks](https://github.com/MiguelMSandin/SSNetworks)** by
 **Miguel M. Sandin**. Some of the code was taken from that repository and then
-adapted by me (Jacobo González) to:
+adapted by me (Jacob Gonzalez) to:
 
 - use **DIAMOND** instead of BLAST for the all-vs-all search (much faster on
   large protein sets),

@@ -2,7 +2,7 @@
 
 The filtering / cleaning / clustering logic is adapted from SSNetworks by
 Miguel M. Sandin (https://github.com/MiguelMSandin/SSNetworks, GPL-3.0),
-reworked here for DIAMOND output and the proteinssn CLI.
+reworked by Jacob Gonzalez for DIAMOND output and the proteinssn CLI.
 
 DIAMOND is run with output format 6 and these 11 columns:
 
