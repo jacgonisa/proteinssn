@@ -8,12 +8,10 @@ version = "0.1.0"
 description = "Build and visualise protein Sequence Similarity Networks (SSNs) from a FASTA file."
 readme = "README.md"
 requires-python = ">=3.8"
-license = { text = "MIT" }
 authors = [{ name = "Jacobo González" }]
 keywords = ["bioinformatics", "protein", "sequence-similarity-network", "ssn", "diamond", "clustering"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
 ]
 dependencies = [

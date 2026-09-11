@@ -10,6 +10,11 @@ network for you.
 proteins.faa  ──►  DIAMOND all-vs-all  ──►  filter edges  ──►  clusters  ──►  plots
 ```
 
+![Example SSN](docs/example_network.png)
+
+*Example: 60 laccase proteins at 30% identity / 50% coverage. Nodes are proteins,
+coloured by cluster; two main families separate out, with a few singletons.*
+
 ## Install
 
 DIAMOND is the only external dependency. The easiest way to get everything:
@@ -107,6 +112,33 @@ families apart; lower it to merge them.
 - DIAMOND ≥ 2.1
 - networkx, pandas, matplotlib, pyvis (installed automatically)
 
-## License
+## Acknowledgements & disclaimer
 
-MIT
+The core SSN logic here — the all-vs-all comparison, reciprocal-hit cleaning,
+threshold-based edge filtering and connected-component clustering — is adapted
+from **[SSNetworks](https://github.com/MiguelMSandin/SSNetworks)** by
+**Miguel M. Sandin**. Some of the code was taken from that repository and then
+adapted by me (Jacobo González) to:
+
+- use **DIAMOND** instead of BLAST for the all-vs-all search (much faster on
+  large protein sets),
+- fit the **[MetEOr](https://github.com/jacgonisa/MetEOr)** workflow it grew out
+  of, and
+- be a **friendly, self-contained CLI** with built-in static + interactive
+  visualisation and a threshold sweep.
+
+Please cite the original work if you use this tool:
+
+> Miguel M. Sandin. *SSNetworks: A brief, quick and dirty introduction to
+> Sequence Similarity Networks.* GitHub repository.
+> https://github.com/MiguelMSandin/SSNetworks
+
+Note that the upstream SSNetworks repository is released under **GPL-3.0**.
+
+## References
+
+- Sandin, M. M. *SSNetworks.* https://github.com/MiguelMSandin/SSNetworks
+- Buchfink, B., Reuter, K. & Drost, H-G. (2021) Sensitive protein alignments at
+  tree-of-life scale using DIAMOND. *Nature Methods* 18, 366–368.
+- Hagberg, A., Schult, D. & Swart, P. (2008) Exploring network structure,
+  dynamics, and function using NetworkX. *Proc. 7th Python in Science Conf.*
