@@ -30,17 +30,29 @@ def main():
     ap.add_argument("--color-col", default=None, help="metadata column for node colour (default: 2nd col)")
     ap.add_argument("--shape-col", default=None, help="optional metadata column for node shape")
     ap.add_argument("--layout", choices=["organic","spring"], default="organic")
+    ap.add_argument("--edge-length", choices=["none","identity","evalue"], default="none",
+                    help="make edge LENGTH reflect similarity (weighted spring layout): "
+                         "'identity' = shorter when %%identity higher; 'evalue' = shorter when more "
+                         "significant. Longer edge = less similar. Overrides --layout.")
     ap.add_argument("--giant-only", action="store_true",
                     help="plot only the largest connected component (drops singletons / tiny clusters "
                          "that ForceAtlas2 flings to the periphery)")
     ap.add_argument("--title", default="Sequence similarity network")
     a = ap.parse_args()
 
+    import numpy as np
     ed = pd.read_csv(a.edges, sep="\t")
     src, tgt = ed.columns[0], ed.columns[1]
     meta = pd.read_csv(a.meta, sep="\t").set_index(pd.read_csv(a.meta, sep="\t").columns[0])
     color_col = a.color_col or meta.columns[0]
-    G = nx.from_pandas_edgelist(ed, src, tgt)
+    # spring-layout weight: larger weight => stronger pull => SHORTER edge => more similar
+    if a.edge_length == "identity" and "pident" in ed.columns:
+        ed["w"] = ed["pident"].astype(float)
+    elif a.edge_length == "evalue" and "evalue" in ed.columns:
+        ev = ed["evalue"].astype(float).clip(lower=1e-300)
+        ed["w"] = -np.log10(ev)                        # more significant (smaller e-value) => larger w
+    attr = ["w"] if a.edge_length != "none" and "w" in ed.columns else True
+    G = nx.from_pandas_edgelist(ed, src, tgt, edge_attr=attr)
     if a.giant_only:
         giant = max(nx.connected_components(G), key=len)
         G = G.subgraph(giant).copy()
@@ -51,10 +63,15 @@ def main():
     pal = {c: CLADE_COLORS.get(c, PALETTE[i % len(PALETTE)]) for i, c in enumerate(cats)}
     col = meta[color_col].to_dict()
 
-    print(f"layout: {a.layout} ({G.number_of_nodes()} nodes, {G.number_of_edges()} edges)…", flush=True)
-    if a.layout == "organic":
+    if a.edge_length != "none":
+        print(f"layout: weighted spring, edge length ~ {a.edge_length} "
+              f"({G.number_of_nodes()} nodes, {G.number_of_edges()} edges)…", flush=True)
+        pos = nx.spring_layout(G, weight="w", k=0.3, iterations=200, seed=1)
+    elif a.layout == "organic":
+        print(f"layout: organic ({G.number_of_nodes()} nodes, {G.number_of_edges()} edges)…", flush=True)
         pos = nx.forceatlas2_layout(G, max_iter=300, scaling_ratio=2.0, seed=1)
     else:
+        print(f"layout: spring ({G.number_of_nodes()} nodes, {G.number_of_edges()} edges)…", flush=True)
         pos = nx.spring_layout(G, k=0.15, iterations=50, seed=1)
 
     fig, ax = plt.subplots(figsize=(13, 13))
