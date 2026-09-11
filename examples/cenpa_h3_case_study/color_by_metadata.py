@@ -21,6 +21,8 @@ PALETTE = ["#e41a1c","#377eb8","#4daf4a","#984ea3","#ff7f00","#a65628","#f781bf"
 # sensible fixed colours for common taxonomic clades (fall back to PALETTE otherwise)
 CLADE_COLORS = {"Vertebrates":"#e41a1c","Invertebrates":"#377eb8","Viridiplantae":"#4daf4a",
                 "Fungi":"#984ea3","Protist":"#ff7f00"}
+# fixed node shapes for known groups (CENP-A triangles, H3 circles); others fall back to a cycle
+SHAPE_MAP = {"CENPA":"^","CENP-A":"^","CENH3":"^","H3":"o"}
 
 def main():
     ap = argparse.ArgumentParser()
@@ -56,10 +58,21 @@ def main():
         pos = nx.spring_layout(G, k=0.15, iterations=50, seed=1)
 
     fig, ax = plt.subplots(figsize=(13, 13))
-    nx.draw_networkx_edges(G, pos, alpha=0.05, width=0.3, edge_color="#888", ax=ax)
+    # edges: within-clade edges take the clade colour; cross-clade edges stay faint grey
+    within = {c: [] for c in cats}
+    between = []
+    for u, v in G.edges():
+        cu, cv = col.get(u), col.get(v)
+        (within[cu] if (cu == cv and cu in within) else between).append((u, v))
+    nx.draw_networkx_edges(G, pos, edgelist=between, alpha=0.12, width=0.4, edge_color="#666", ax=ax)
+    for c, elist in within.items():
+        if elist:
+            nx.draw_networkx_edges(G, pos, edgelist=elist, alpha=0.55, width=0.7,
+                                   edge_color=pal[c], ax=ax)
     if a.shape_col:
         shp = meta[a.shape_col].to_dict()
-        markers = dict(zip(sorted(set(shp.values())), itertools.cycle(["o","^","s","D","v"])))
+        extra = itertools.cycle(["s","D","v","p","*"])
+        markers = {s: SHAPE_MAP.get(s, next(extra)) for s in sorted(set(shp.values()))}
         for sval, mk in markers.items():
             ns = [n for n in G if shp.get(n) == sval]
             nx.draw_networkx_nodes(G, pos, nodelist=ns, node_shape=mk,
