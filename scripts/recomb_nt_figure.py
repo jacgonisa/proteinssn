@@ -87,7 +87,7 @@ def extract_domain_nt(data_dir, fl_dir, wanted):
     return out
 
 
-def nt_network(records, workdir, threads=6):
+def nt_network(records, workdir, threads=6, min_ratio=0.30):
     """records: {id: seq}. mmseqs all-vs-all nt -> graph with bitscore-ratio edges."""
     fa = os.path.join(workdir, "n.fa")
     with open(fa, "w") as o:
@@ -112,7 +112,7 @@ def nt_network(records, workdir, threads=6):
     for (a, b), bit in pair.items():
         denom = min(selfbit.get(a, bit), selfbit.get(b, bit)) or bit
         r = min(1.0, bit / denom)
-        if r >= 0.30:
+        if r >= min_ratio:
             g.add_edge(a, b, weight=r)
     return g
 
@@ -181,6 +181,8 @@ def main() -> None:
                     help="restrict SSN nodes to these families for clarity")
     ap.add_argument("--out", required=True)
     ap.add_argument("--per-family", type=int, default=70)
+    ap.add_argument("--min-ratio", type=float, default=0.30,
+                    help="edge bitscore-ratio threshold (higher = cleaner clusters)")
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args()
     fam_filter = set(args.families) if args.families else None
@@ -219,7 +221,7 @@ def main() -> None:
             recs = {f"{ns}": seqs[(ns, dom)] for ns, d in panels[dom]
                     if (ns, dom) in seqs}
             fam_of = {ns: assign[(ns, dom)][0] for ns in recs}
-            g = nt_network(recs, tmp)
+            g = nt_network(recs, tmp, min_ratio=args.min_ratio)
             tfam = assign.get((target, dom), ("?",))[0]
             print(f"[fig] {dom}: {len(recs)} seqs, target family={tfam}")
             draw_ssn(fig.add_subplot(gs[1, col]), g, fam_of, target,
