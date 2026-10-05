@@ -218,9 +218,10 @@ def main() -> None:
             if d == dom and conf and (fam_filter is None or fam in fam_filter):
                 byfam[fam].append(ns)
         chosen = []
+        lim = None if args.per_family <= 0 else args.per_family   # 0 = no cap
         for fam, members in byfam.items():
             rng.shuffle(members)
-            chosen += [(ns, dom) for ns in members[:args.per_family]]
+            chosen += [(ns, dom) for ns in members[:lim]]
         chosen.append((target, dom))
         panels[dom] = chosen
         wanted |= set(chosen)
