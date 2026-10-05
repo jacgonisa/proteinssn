@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.snakemake/
+results/
+*.dmnd
+*.diamond.tsv
+mmseqs_tmp/
+*_tmp/
+.DS_Store

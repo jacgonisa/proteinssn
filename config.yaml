@@ -1,0 +1,38 @@
+# ssn_analysis configuration
+# Paths are CSD3 (camhpc) locations. Inputs are READ-ONLY (owned by mz569).
+
+# Read-only TEsorter output (one run per genome).
+input_dir: "/home/jg2070/rds/rds-pangenome-GHSMn3VLKj4/002_Genomes/TEs/Athilafinder/2026/full_length/TEsorter_153genomes"
+# Nucleotide full-length elements + Athila_counts live one level up (Phases 6-8).
+parent_dir: "/home/jg2070/rds/rds-pangenome-GHSMn3VLKj4/002_Genomes/TEs/Athilafinder/2026/full_length"
+
+# Writable output root (ours).
+out_dir: "/rds/user/jg2070/hpc-work/athila_ssn/results"
+
+# Domain layers for the multiplex (env/ORF2 is NOT emitted by this REXdb model).
+layers: ["GAG", "PROT", "RT", "RH", "INT"]
+# Primary 5-layer analysis runs on elements with ALL of these present.
+full5_required: ["GAG", "PROT", "RT", "RH", "INT"]
+
+# Phase 2 filters
+length_frac_min: 0.60        # drop domains < 60% of that domain's median length
+mmseqs_min_id: 0.95          # Track-A redundancy collapse (on concatenated peptide)
+mmseqs_min_cov: 0.80
+mmseqs_cov_mode: 1           # coverage of target
+
+# Phase 3 DIAMOND
+diamond_sensitivity: "very-sensitive"
+diamond_max_target_seqs: 5000
+diamond_evalue: 0.001
+
+# Phase 4 concordance
+knn_k: 20
+knn_k_sensitivity: [10, 50]
+null_permutations: 200
+fdr_target: 0.05
+
+# Phase 5 partitioning
+leiden_resolution: 1.0
+mcl_inflation: [1.4, 2.0]
+
+threads: 16

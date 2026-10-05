@@ -1,0 +1,25 @@
+name: athila_ssn
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.10
+  - diamond>=2.1
+  - mmseqs2
+  - snakemake-minimal
+  - numpy
+  - scipy
+  - pandas
+  - networkx>=3
+  - python-igraph
+  - leidenalg
+  - markov_clustering
+  - matplotlib
+  - seaborn
+  - pyyaml
+  - pip
+  - pip:
+      - pyvis>=0.3
+      - git+https://github.com/jacgonisa/proteinssn
+# Phase 7 (confirmation) tools are installed separately when needed:
+#   mafft, iqtree, hyphy  (bioconda); foldseek env already exists for the GAG fallback.
