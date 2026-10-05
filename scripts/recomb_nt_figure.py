@@ -149,8 +149,26 @@ def draw_arch(ax, element, data_dir, acc, assign):
         ax.spines[sp].set_visible(False)
 
 
+def layout_positions(g, seed=1):
+    """Scalable layout: igraph FR (small) / DrL (large); fall back to networkx."""
+    nodes = list(g.nodes())
+    if len(nodes) > 1200:
+        try:
+            import igraph as ig
+            idx = {n: i for i, n in enumerate(nodes)}
+            edges = [(idx[u], idx[v]) for u, v in g.edges()]
+            w = [g[u][v]["weight"] for u, v in g.edges()]
+            ig_g = ig.Graph(n=len(nodes), edges=edges)
+            lay = (ig_g.layout_drl() if len(nodes) > 5000
+                   else ig_g.layout_fr(weights=w))
+            return {nodes[i]: tuple(lay[i]) for i in range(len(nodes))}
+        except Exception as e:
+            print(f"  (igraph layout failed: {e}; using networkx)")
+    return nx.spring_layout(g, seed=seed, weight="weight", k=0.35)
+
+
 def draw_ssn(ax, g, fam_of, target, title, letter, seed=1):
-    pos = nx.spring_layout(g, seed=seed, weight="weight", k=0.35)
+    pos = layout_positions(g, seed=seed)
     nx.draw_networkx_edges(g, pos, ax=ax, alpha=0.12, width=0.4, edge_color="#999")
     fams = sorted(set(fam_of.values()))
     for fam in fams:
