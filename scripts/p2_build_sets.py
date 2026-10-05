@@ -153,8 +153,18 @@ def main() -> None:
                 if ns in kept[d]:
                     fa.write(f">{ns}\n{kept[d][ns]}\n")
 
+    n_full5_total = sum(r["is_full5"] for r in nodes.values())
+    n_full5_rep = sum(1 for ns, r in nodes.items()
+                      if r["is_full5"] and rep_of.get(ns) == ns)
     print(f"[p2] node_table: {len(nodes)} rows -> {node_table}")
-    print(f"[p2] PRIMARY node set (full-5 representatives): {n_primary} -> {analysis}")
+    print("[p2] ===== full-5 redundancy collapse (95/80) =====")
+    print(f"[p2]   full-5 elements (raw)              : {n_full5_total}")
+    print(f"[p2]   full-5 cluster representatives     : {n_full5_rep}")
+    print(f"[p2]   EFFECTIVE n (reps, all 5 post-filter): {n_primary}")
+    if n_full5_total:
+        print(f"[p2]   collapse ratio                     : "
+              f"{n_full5_total / max(1, n_primary):.1f}x")
+    print(f"[p2] analysis_nodes -> {analysis}")
 
 
 def _mmseqs_cluster(concat_faa: str, outdir: str, args) -> dict[str, str]:

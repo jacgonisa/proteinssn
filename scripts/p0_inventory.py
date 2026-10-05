@@ -38,6 +38,16 @@ def main() -> None:
     per_acc = Counter()
     n_full5 = n_has_pol = n_total = 0
 
+    # Non-Athila material inside Athilafinder loci is a FREE labelled set of nested
+    # insertions ("caught in the act") — keep coordinates to calibrate the Phase 6
+    # nesting filter. Two categories: whole-element non-Athila calls, and Athila
+    # elements carrying a domain whose clade is non-Athila.
+    nested_tsv = os.path.join(inv_dir, "nested_insertions.tsv")
+    nested = open(nested_tsv, "w")
+    nested.write("ns_id\taccession\tchrom\tstart\tend\tstrand\t"
+                 "element_clade\tdomain\tdomain_clade\tcategory\n")
+    n_nested_elem = n_nested_dom = 0
+
     elements_tsv = os.path.join(inv_dir, "elements.tsv")
     with open(elements_tsv, "w") as out:
         out.write("ns_id\taccession\telement\tchrom\tstart\tend\ttag\t"
@@ -47,6 +57,22 @@ def main() -> None:
             acc = L.accession_from_path(cf)
             for rec in L.parse_cls_tsv(cf):
                 n_total += 1
+                _ns = L.nsid(acc, rec["element"])
+                _c = L.element_coords(rec["element"]) or {}
+                if rec["clade"] != "Athila":
+                    nested.write("\t".join(str(x) for x in [
+                        _ns, acc, _c.get("chrom", ""), _c.get("start", ""),
+                        _c.get("end", ""), rec["strand"], rec["clade"], "", "",
+                        "nonathila_element"]) + "\n")
+                    n_nested_elem += 1
+                else:
+                    for dom, dclade in rec["domains"].items():
+                        if dclade and dclade != "Athila":
+                            nested.write("\t".join(str(x) for x in [
+                                _ns, acc, _c.get("chrom", ""), _c.get("start", ""),
+                                _c.get("end", ""), rec["strand"], rec["clade"],
+                                dom, dclade, "nested_domain"]) + "\n")
+                            n_nested_dom += 1
                 per_acc[acc] += 1
                 clade_counts[rec["clade"]] += 1
                 complete_counts[rec["complete"]] += 1
@@ -75,6 +101,7 @@ def main() -> None:
                        if present - set(L.CORE_DOMAINS) else ""),
                     int(is_full5), int(has_pol), int(is_ath),
                 ]) + "\n")
+    nested.close()
 
     # optional cross-reference
     xref = ""
@@ -96,7 +123,10 @@ def main() -> None:
         md.write(f"- genomes (cls.tsv files): **{len(cls_files)}**\n")
         md.write(f"- total elements: **{n_total}**\n")
         md.write(f"- full-5 (GAG+PROT+RT+RH+INT): **{n_full5}**\n")
-        md.write(f"- has >=1 pol domain (RT/RH/INT): **{n_has_pol}**\n\n")
+        md.write(f"- has >=1 pol domain (RT/RH/INT): **{n_has_pol}**\n")
+        md.write(f"- nested-insertion labels (see `nested_insertions.tsv`): "
+                 f"**{n_nested_elem}** non-Athila elements + "
+                 f"**{n_nested_dom}** non-Athila domains inside Athila elements\n\n")
         md.write(_table("Clade", clade_counts))
         md.write(_table("Complete", complete_counts))
         md.write(_table("Per-domain element counts", domain_counts,
