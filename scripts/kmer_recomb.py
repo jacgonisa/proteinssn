@@ -96,6 +96,11 @@ def scan_element(seq, marker, k, nbins, min_seg, min_total, dom_frac):
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--exemplars", required=True)
+    ap.add_argument("--markers", default=None,
+                    help="robust marker TSV (kmer<TAB>family) from kmc_markers.py")
+    ap.add_argument("--tag", default="kmer_recomb", help="output subdirectory name")
+    ap.add_argument("--clip-dir", default=None,
+                    help="TEsorter dir with *.dom.gff3: scan only the internal domain span")
     ap.add_argument("--fulllength", required=True)
     ap.add_argument("--out-dir", required=True)
     ap.add_argument("--k", type=int, default=31)
@@ -105,11 +110,36 @@ def main() -> None:
     ap.add_argument("--dom-frac", type=float, default=0.6)
     args = ap.parse_args()
 
-    out = os.path.join(args.out_dir, "kmer_recomb")
+    out = os.path.join(args.out_dir, args.tag)
     os.makedirs(out, exist_ok=True)
 
-    marker, fams = build_markers(args.exemplars, args.k)
+    if args.markers:
+        marker = {}
+        with open(args.markers) as fh:
+            next(fh)
+            for line in fh:
+                km, fam = line.rstrip("\n").split("\t")
+                km = km.upper()
+                marker[km] = fam
+                marker[revcomp(km)] = fam
+        fams = sorted(set(marker.values()))
+    else:
+        marker, fams = build_markers(args.exemplars, args.k)
     print(f"[kmer] families: {len(fams)}; marker k-mers (both strands): {len(marker)}")
+
+    span = {}
+    if args.clip_dir:
+        for gff in glob.glob(os.path.join(args.clip_dir, "*.dom.gff3")):
+            acc = L.accession_from_path(gff)
+            for line in open(gff):
+                f = line.split("\t")
+                if len(f) < 9:
+                    continue
+                ns = L.nsid(acc, f[0])
+                a, b = int(f[3]), int(f[4])
+                lo, hi = span.get(ns, (a, b))
+                span[ns] = (min(lo, a), max(hi, b))
+        print(f"[kmer] clipping to internal domain span for {len(span)} elements")
 
     primary = {}            # ns_id -> family (abundance)
     recs = []               # (ns_id, segments)
@@ -119,6 +149,11 @@ def main() -> None:
         acc = L.accession_from_path(flf)
         for el, seq in read_fasta(flf).items():
             ns = L.nsid(acc, el)
+            if args.clip_dir:
+                if ns not in span:
+                    continue
+                lo, hi = span[ns]
+                seq = seq[lo - 1:hi]
             prim, segs = scan_element(seq, marker, args.k, args.nbins,
                                       args.min_seg, args.min_total, args.dom_frac)
             n_scanned += 1
