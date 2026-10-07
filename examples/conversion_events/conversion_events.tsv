@@ -1,0 +1,8 @@
+element	accession	chrom	start	host	donor	sites_host	sites_donor	tract_sites	tract_bp	tract_start_in_span	span_bp	shuffle_p	donor_minus_host_identity_in_tract	donor_minus_host_identity_outside	ltr_identity	context
+Est-1.ragtag_Chr1to5::Atha_Chr3.11860844-11869554_D_Athila	Est-1.ragtag_Chr1to5	Chr3	11860844	6a	2	5	2	2	40	1606	1899	0.0973	-6	-8.71	91.94	pericentromeric
+Nemrut-1.ragtag_Chr1to5::Atha_Chr2.5863158-5876251_P_Athila	Nemrut-1.ragtag_Chr1to5	Chr2	5863158	2	1	12	2	2	35	3626	6902	0.103	nan	-17.2	89.25	pericentromeric
+Per-1.ragtag_Chr1to5::Atha_Chr3.11981190-11989900_D_Athila	Per-1.ragtag_Chr1to5	Chr3	11981190	6a	2	5	2	2	40	1605	1898	0.0961	-6.67	-8	93.81	pericentromeric
+Rld-2.ragtag_Chr1to5::Atha_Chr3.11860427-11869137_D_Athila	Rld-2.ragtag_Chr1to5	Chr3	11860427	6a	2	5	2	2	40	1606	1899	0.0933	-6	-8.71	91.94	pericentromeric
+_Had-6b_ColChr1to5ragtag_Chr1to5::Atha_Chr4.4882538-4891479_D_Athila	_Had-6b_ColChr1to5ragtag_Chr1to5	Chr4	4882538	4c	9	7	13	13	1269	1795	4727	0.0021	nan	nan	91.51	pericentromeric
+_Had-6b_ColChr1to5ragtag_Chr1to5::Atha_Chr4.4664029-4675693_P_Athila	_Had-6b_ColChr1to5ragtag_Chr1to5	Chr4	4664029	4c	1	12	4	4	806	3023	6820	0.0102	nan	nan	94.40	pericentromeric
+ws-4.ragtag_Chr1to5::Atha_Chr3.11837125-11845834_D_Athila	ws-4.ragtag_Chr1to5	Chr3	11837125	6a	2	5	2	2	40	1605	1898	0.0935	-6.67	-8	93.80	pericentromeric

@@ -195,7 +195,7 @@ S.append(f"""<title>ATHILA Recombination Atlas</title>
 <h2>Key findings</h2>
 <ul class="findings">
 <li><b>Recombination between ATHILA families is real but needs nucleotide-level markers to see.</b>Protein domains are too similar across families to assign them (best vs second-best family differ by ~5%). Family-specific k-mer markers resolve them and recover every planted and known case.</li>
-<li><b>619 recombinant mosaics (3.3% of typed elements), almost all single-switch.</b>Crossover-like switches dominate; only two convincing conversion-like tracts were found, though short tracts are hard to detect.</li>
+<li><b>619 recombinant mosaics (3.3% of typed elements), all single-switch.</b>Seven elements first looked conversion-like (A→B→A). On inspection, five are a single shared variant and the two strongest are nested ATHILA LTRs inside ATHILA4c elements. No convincing gene-conversion tract remains, although short tracts are hard to detect.</li>
 <li><b>More similar families recombine more.</b>Across all 91 family pairs, recombination rises with family homology after normalising for abundance and detectability (Spearman ρ = +0.35, permutation p ≈ 0.0015; odds ratio 4.5 per +10% homology).</li>
 <li><b>Partner choice is not random.</b>ATHILA6a–6b, 1–6, 2–4c, 7–7a and 0–3 recombine more than expected; ATHILA1 and ATHILA2, the two most common families, recombine with each other four times less than abundance predicts.</li>
 <li><b>Centrophilic families (ATHILA5, 6b, 1) never recombine with each other</b> (0 events vs ~10.6 expected); their recombination partners are neutral or centrophobic families.</li>
@@ -258,7 +258,14 @@ S.append(f"""<section id="type"><span class="sec-num">5</span><div class="col">
 </div>
 {table(["min. independent sites per run", "crossover-like (expected by chance)", "conversion-like (expected by chance)"],
        [["2", "297 (40)", "7 (61)"], ["3", "180 (13)", "2 (15)"], ["5", "37 (1.5)", "0 (0.6)"]], num=(0,))}
-<div class="col"><p>Two conversion-like tracts are well supported, both in accession Had-6b on Chr4: a 1.3 kb ATHILA9 tract inside ATHILA4c (13 sites) and an 0.8 kb ATHILA1 tract inside ATHILA4c (4 sites). Planting synthetic tracts into clean elements shows the limit: 250–500 bp tracts between divergent families are recovered 20–60% of the time, 100 bp tracts almost never, and nothing between ATHILA6a and 6b. Within what can be seen, crossover-like recombination dominates.</p></div>
+<div class="col"><p>The "chance" column comes from shuffling the family labels of an element's own diagnostic sites, keeping their positions, and classifying the shuffled element in the same way; the count is averaged over 10 shuffles per element. That pooled null suits crossovers but is generous for conversions, because shuffling a genuine A/B mosaic produces many A→B→A patterns. Each of the seven conversion-like elements was therefore tested on its own (10,000 shuffles of its sites) and checked against the host and donor references.</p></div>
+{table(["element", "host → donor", "tract", "own-site shuffle p", "what it is"],
+       [["Had-6b, Chr4:4,882,538", "4c → 9", "13 sites, 1,269 bp", "0.002", "a complete ATHILA9 LTR (1,263 bp, 86% identity) nested in an ATHILA4c element"],
+        ["Had-6b, Chr4:4,664,029", "4c → 1", "4 sites, 806 bp", "0.010", "the 3′ 1 kb of an ATHILA1 LTR nested in an ATHILA4c element"],
+        ["Est-1, Per-1, Rld-2, ws-4, Chr3 ~11.8 Mb", "6a → 2", "2 sites, 40 bp", "0.09–0.10", "one shared variant at the same locus; no local gain in identity to ATHILA2"],
+        ["Nemrut-1, Chr2:5,863,158", "2 → 1", "2 sites, 35 bp", "0.10", "a single variant"]],
+       caption="The seven conversion-like calls (at least 2 sites per run)")}
+<div class="col"><p>So no conversion tract survives. Planting synthetic tracts into clean elements shows how much could be missed: 250–500 bp tracts between divergent families are recovered 20–60% of the time, 100 bp tracts almost never, and nothing between ATHILA6a and 6b.</p></div>
 {table(["host > donor", "crossover recovered", "conversion 100 bp", "250 bp", "500 bp", "1 kb"],
        [["2 > 6b", "97%", "3%", "32%", "63%", "17%"], ["1 > 2", "85%", "12%", "30%", "33%", "8%"],
         ["2 > 4c", "88%", "0%", "3%", "10%", "17%"], ["6 > 1", "40%", "0%", "20%", "37%", "17%"],
@@ -344,7 +351,7 @@ S.append("""<section id="caveats"><span class="sec-num">11</span><div class="col
 <p>Everything is on the <code>athila-analysis</code> branch of <code>github.com/jacgonisa/proteinssn</code>. Main scripts:</p>
 <ul class="plain">
 <li><code>kmc_markers.py</code>, <code>kmer_recomb.py</code>: family markers and mosaic scan</li>
-<li><code>island_scan.py</code>, <code>conv_power.py</code>: crossover vs conversion and detection power</li>
+<li><code>island_scan.py</code>, <code>conv_power.py</code>, <code>conversion_events.py</code>: crossover vs conversion, detection power and per-event checks</li>
 <li><code>recomb_bias_kmer.py</code>, <code>perm_pairs.py</code>: homology association and partner permutation</li>
 <li><code>centro_class.py</code>, <code>centro_network.py</code>: centromere classification and network</li>
 <li><code>junction_scan.py</code>, <code>solo_ltr.py</code>, <code>age_effects.py</code>: junctions and completeness, solo LTRs and age</li>
