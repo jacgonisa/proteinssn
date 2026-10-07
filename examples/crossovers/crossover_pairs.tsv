@@ -1,0 +1,16 @@
+pair	elements	loci	replicated_loci	homology	class_a	class_b
+2-4c	97	2	2	53	centrophobic	centrophobic
+2-9	19	4	2	55	centrophobic	neutral
+1-9	9	3	2	54	centrophilic	neutral
+5-6a	27	1	1	57	centrophilic	neutral
+1-2	13	4	1	68	centrophilic	centrophobic
+1-4	12	1	1	45	centrophilic	centrophobic
+7-7a	10	1	1	83	NA	neutral
+1-6	8	2	1	74	centrophilic	centrophobic
+4c-6a	6	1	1	43	centrophobic	neutral
+2-6a	3	1	1	65	centrophobic	neutral
+1-8a	3	1	1	44	centrophilic	NA
+2-5	2	2	0	65	centrophobic	centrophilic
+2-6	1	1	0	75	centrophobic	centrophobic
+3-9	1	1	0	47	centrophobic	neutral
+4-6	1	1	0	47	centrophobic	centrophobic

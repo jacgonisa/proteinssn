@@ -49,6 +49,8 @@ def main() -> None:
     ap.add_argument("--k", type=int, default=31)
     ap.add_argument("--prevalence", type=float, default=0.25)
     ap.add_argument("--min-members", type=int, default=30)
+    ap.add_argument("--other-prevalence", type=float, default=0.02,
+                    help="exclude a k-mer if present in >= this fraction of another family's elements")
     ap.add_argument("--threads", type=int, default=8)
     args = ap.parse_args()
 
@@ -98,7 +100,8 @@ def main() -> None:
             kmc_count(kmc, os.path.join(work, f"{f}.pure.fa"),
                       os.path.join(work, f"{f}.in"), tmp, args.k, ci, args.threads)
             kmc_count(kmc, os.path.join(work, f"{f}.pure.fa"),
-                      os.path.join(work, f"{f}.pres"), tmp, args.k, 2, args.threads)
+                      os.path.join(work, f"{f}.pres"), tmp, args.k,
+                      max(2, math.ceil(args.other_prevalence * n)), args.threads)
             source[f] = f"pure n={n}, ci={ci}"
         else:
             kmc_count(kmc, os.path.join(work, f"{f}.exe.fa"),

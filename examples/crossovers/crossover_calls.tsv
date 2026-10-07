@@ -1,0 +1,234 @@
+ns_id	accession	chrom	start	family_5p	family_3p	llr	class	nesting_flags	ltr_sites_inside	breakpoint	domains
+100621.Chr_scaffolds::Atha_Chr3.18892645-18900997_D_Athila	100621.Chr_scaffolds	Chr3	18892645	2	4c	34.1	crossover		0	within RT	GAG,RT,RH
+100621.Chr_scaffolds::Atha_Chr5.16512418-16524437_D_Athila	100621.Chr_scaffolds	Chr5	16512418	6	1	69.6	crossover		0	within INT	GAG,PROT,INT
+22005.ragtag_Chr1to5::Atha_Chr2.8142498-8156042_D_Athila	22005.ragtag_Chr1to5	Chr2	8142498	1	4	48.5	nested_or_merged	ltr_inside	9	outside annotated domains	GAG,PROT
+6923.ragtag_Chr1to5::Atha_Chr2.5725848-5737835_P_Athila	6923.ragtag_Chr1to5	Chr2	5725848	2	6a	35.2	crossover		0	between GAG and PROT	GAG,PROT
+8285.ragtag_Chr1to5::Atha_Chr1.14180229-14192488_D_Athila	8285.ragtag_Chr1to5	Chr1	14180229	2	4c	41.9	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+8285.ragtag_Chr1to5::Atha_Chr2.6734730-6747410_P_Athila	8285.ragtag_Chr1to5	Chr2	6734730	4c	6a	58.8	crossover		0	between GAG and PROT	GAG,PROT
+8285.ragtag_Chr1to5::Atha_Chr3.12685221-12696452_D_Athila	8285.ragtag_Chr1to5	Chr3	12685221	9	2	26.2	nested_or_merged	ltr_inside	5	within RH	RH
+9806.ragtag_Chr1to5::Atha_Chr1.14213408-14225667_D_Athila	9806.ragtag_Chr1to5	Chr1	14213408	2	4c	41.9	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+9806.ragtag_Chr1to5::Atha_Chr3.18941716-18950068_P_Athila	9806.ragtag_Chr1to5	Chr3	18941716	2	4c	34.6	crossover		0	within RT	GAG,RT,RH
+9847.ragtag_Chr1to5::Atha_Chr4.7900680-7912209_P_Athila	9847.ragtag_Chr1to5	Chr4	7900680	5	6a	27.4	crossover		0	outside annotated domains	
+9994.ragtag_Chr1to5::Atha_Chr3.17724292-17732673_D_Athila	9994.ragtag_Chr1to5	Chr3	17724292	2	4c	34.6	crossover		0	within RT	GAG,RT,RH
+AH-7.ragtag_Chr1to5::Atha_Chr3.16538225-16546606_D_Athila	AH-7.ragtag_Chr1to5	Chr3	16538225	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+ANGE-B-10.ragtag_Chr1to5::Atha_Chr3.18061875-18070227_D_Athila	ANGE-B-10.ragtag_Chr1to5	Chr3	18061875	2	4c	34.6	crossover		0	within RT	GAG,RT,RH
+AS150_2026AT::Atha_Chr4.9687715-9699256_P_Athila	AS150_2026AT	Chr4	9687715	5	6a	26.7	crossover		0	outside annotated domains	
+AS150_2026AT::Atha_Chr5.13008854-13022552_D_Athila	AS150_2026AT	Chr5	13008854	2	9	36.1	crossover		0	outside annotated domains	GAG,PROT
+AS530_AT::Atha_Chr4.9670580-9681019_D_Athila	AS530_AT	Chr4	9670580	9	1	26.7	crossover		3	outside annotated domains	GAG,PROT
+AS530_AT::Atha_Chr5.14326701-14340399_P_Athila	AS530_AT	Chr5	14326701	2	9	36.1	crossover		0	outside annotated domains	GAG,PROT
+ASS3_AT::Atha_Chr4.9972936-9983382_D_Athila	ASS3_AT	Chr4	9972936	9	1	26.7	crossover		3	outside annotated domains	GAG,PROT
+ASS3_AT::Atha_Chr5.14921405-14935103_P_Athila	ASS3_AT	Chr5	14921405	2	9	36.1	crossover		0	outside annotated domains	GAG,PROT
+Abd-0.ragtag_Chr1to5::Atha_Chr2.5879670-5891657_P_Athila	Abd-0.ragtag_Chr1to5	Chr2	5879670	2	6a	35.2	crossover		0	between GAG and PROT	GAG,PROT
+Abd-0.ragtag_Chr1to5::Atha_Chr3.13244501-13258277_D_Athila	Abd-0.ragtag_Chr1to5	Chr3	13244501	2	1	51.0	crossover		0	between GAG and PROT	GAG,PROT
+Abd-0.ragtag_Chr1to5::Atha_Chr3.18366754-18375587_D_Athila	Abd-0.ragtag_Chr1to5	Chr3	18366754	2	4c	35.2	crossover		0	within RT	GAG,RT,RH
+Arb-0.ragtag_Chr1to5::Atha_Chr5.18694933-18707218_P_Athila	Arb-0.ragtag_Chr1to5	Chr5	18694933	7	7a	26.3	crossover		0	outside annotated domains	GAG,PROT,RT,RH,INT
+BELC-C-12.ragtag_Chr1to5::Atha_Chr3.13238223-13251990_D_Athila	BELC-C-12.ragtag_Chr1to5	Chr3	13238223	2	1	50.5	crossover		0	between GAG and PROT	GAG,PROT
+Belmonte-4-94.ragtag_Chr1to5::Atha_Chr1.14307312-14319924_D_Athila	Belmonte-4-94.ragtag_Chr1to5	Chr1	14307312	2	4c	40.5	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Belmonte-4-94.ragtag_Chr1to5::Atha_Chr3.17623601-17631981_D_Athila	Belmonte-4-94.ragtag_Chr1to5	Chr3	17623601	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Belmonte-4-94.ragtag_Chr1to5::Atha_Chr5.16170162-16182162_D_Athila	Belmonte-4-94.ragtag_Chr1to5	Chr5	16170162	6	1	66.4	crossover		0	within INT	GAG,PROT,INT
+Bor-1.ragtag_Chr1to5::Atha_Chr2.5420794-5432554_D_Athila	Bor-1.ragtag_Chr1to5	Chr2	5420794	4	1	50.9	crossover		1	outside annotated domains	GAG,PROT
+Bor-1.ragtag_Chr1to5::Atha_Chr3.18061664-18070065_D_Athila	Bor-1.ragtag_Chr1to5	Chr3	18061664	2	4c	33.6	crossover		0	within RT	GAG,RT,RH
+Cdm-0.ragtag_Chr1to5::Atha_Chr3.16888913-16897275_D_Athila	Cdm-0.ragtag_Chr1to5	Chr3	16888913	2	4c	34.6	crossover		0	within RT	GAG,RT,RH
+Co-4.ragtag_Chr1to5::Atha_Chr3.12665405-12673889_D_Athila	Co-4.ragtag_Chr1to5	Chr3	12665405	2	9	26.5	crossover		0	outside annotated domains	GAG,PROT
+Co-4.ragtag_Chr1to5::Atha_Chr3.18576738-18585141_P_Athila	Co-4.ragtag_Chr1to5	Chr3	18576738	2	4c	33.1	crossover		0	within RT	GAG,RT,RH
+Col-0-kang.ragtag_Chr1to5::Atha_Chr1.14326538-14339118_D_Athila	Col-0-kang.ragtag_Chr1to5	Chr1	14326538	2	4c	39.6	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Col-0-kang.ragtag_Chr1to5::Atha_Chr2.7392230-7404016_D_Athila	Col-0-kang.ragtag_Chr1to5	Chr2	7392230	4	1	48.0	crossover		0	outside annotated domains	GAG,PROT
+Db-1_Mercier_Chr1to5::Atha_Chr1.14337476-14349735_D_Athila	Db-1_Mercier_Chr1to5	Chr1	14337476	2	4c	41.9	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Db-1_Mercier_Chr1to5::Atha_Chr3.13109076-13122845_D_Athila	Db-1_Mercier_Chr1to5	Chr3	13109076	2	1	48.0	crossover		0	between GAG and PROT	GAG,PROT
+Db-1_Mercier_Chr1to5::Atha_Chr4.9142353-9154293_D_Athila	Db-1_Mercier_Chr1to5	Chr4	9142353	2	5	66.6	crossover		0	outside annotated domains	GAG,PROT
+Dra-2.ragtag_Chr1to5::Atha_Chr1.14301815-14314074_D_Athila	Dra-2.ragtag_Chr1to5	Chr1	14301815	2	4c	41.9	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Dra-2.ragtag_Chr1to5::Atha_Chr3.18017909-18026310_D_Athila	Dra-2.ragtag_Chr1to5	Chr3	18017909	2	4c	33.6	crossover		0	within RT	GAG,RT,RH
+Edi-0.ragtag_Chr1to5::Atha_Chr3.13184300-13198080_D_Athila	Edi-0.ragtag_Chr1to5	Chr3	13184300	2	1	45.2	crossover		0	between GAG and PROT	GAG,PROT
+Elh-2.ragtag_Chr1to5::Atha_Chr3.17059426-17067826_D_Athila	Elh-2.ragtag_Chr1to5	Chr3	17059426	2	4c	31.2	crossover		0	within RT	GAG,RT,RH
+Elh-2.ragtag_Chr1to5::Atha_Chr5.21021400-21033685_P_Athila	Elh-2.ragtag_Chr1to5	Chr5	21021400	7	7a	26.3	crossover		0	outside annotated domains	GAG,PROT,RT,RH,INT
+Elk-1.ragtag_Chr1to5::Atha_Chr3.17156836-17169735_D_Athila	Elk-1.ragtag_Chr1to5	Chr3	17156836	2	4	53.4	nested_or_merged	ltr_inside	23	between GAG and PROT	GAG,PROT
+Elk-1.ragtag_Chr1to5::Atha_Chr3.18098377-18106716_D_Athila	Elk-1.ragtag_Chr1to5	Chr3	18098377	2	4c	27.4	crossover		0	within RT	GAG,RT,RH
+Est-0.ragtag_Chr1to5::Atha_Chr3.17736003-17744841_D_Athila	Est-0.ragtag_Chr1to5	Chr3	17736003	2	4c	36.5	crossover		0	within RT	GAG,RT,RH
+Est-1.ragtag_Chr1to5::Atha_Chr1.14277170-14289441_D_Athila	Est-1.ragtag_Chr1to5	Chr1	14277170	2	4c	41.2	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Etna-2.ragtag_Chr1to5::Atha_Chr4.10125085-10135531_D_Athila	Etna-2.ragtag_Chr1to5	Chr4	10125085	9	1	26.7	crossover		0	outside annotated domains	GAG,PROT
+Etna-2_kang_ragtag_Chr1to5::Atha_Chr4.10126245-10136684_D_Athila	Etna-2_kang_ragtag_Chr1to5	Chr4	10126245	9	1	26.7	crossover		0	outside annotated domains	GAG,PROT
+Got-22.ragtag_Chr1to5::Atha_Chr5.16267054-16280724_P_Athila	Got-22.ragtag_Chr1to5	Chr5	16267054	2	9	33.6	crossover		0	outside annotated domains	GAG,PROT
+Hiroshima.ragtag_Chr1to5::Atha_Chr3.18213796-18221945_D_Athila	Hiroshima.ragtag_Chr1to5	Chr3	18213796	2	4c	30.2	crossover		0	within RT	GAG,RT,RH
+Hs-0.ragtag_Chr1to5::Atha_Chr3.17811760-17820136_D_Athila	Hs-0.ragtag_Chr1to5	Chr3	17811760	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Ishikawa.ragtag_Chr1to5::Atha_Chr3.18204499-18212648_D_Athila	Ishikawa.ragtag_Chr1to5	Chr3	18204499	2	4c	30.2	crossover		0	within RT	GAG,RT,RH
+Kar-1.ragtag_Chr1to5::Atha_Chr3.16752297-16760668_D_Athila	Kar-1.ragtag_Chr1to5	Chr3	16752297	2	4c	31.0	crossover		0	within RT	GAG,RT,RH
+Kar-1.ragtag_Chr1to5::Atha_Chr5.19991221-20003546_D_Athila	Kar-1.ragtag_Chr1to5	Chr5	19991221	7	7a	26.6	crossover		0	outside annotated domains	GAG,PROT,RT,RH,INT
+Kas-1.ragtag_Chr1to5::Atha_Chr3.17867902-17876763_D_Athila	Kas-1.ragtag_Chr1to5	Chr3	17867902	2	4c	36.9	crossover		0	within RT	GAG,RT,RH
+Kelsterbach-2.ragtag_Chr1to5::Atha_Chr3.18650493-18663104_D_Athila	Kelsterbach-2.ragtag_Chr1to5	Chr3	18650493	6a	4	29.5	nested_or_merged	ltr_inside	5	outside annotated domains	GAG,PROT
+Ket-10.ragtag_Chr1to5::Atha_Chr3.18848402-18856801_D_Athila	Ket-10.ragtag_Chr1to5	Chr3	18848402	2	4c	32.7	crossover		0	within RT	GAG,RT,RH
+Ket-10.ragtag_Chr1to5::Atha_Chr5.17573688-17587367_P_Athila	Ket-10.ragtag_Chr1to5	Chr5	17573688	2	9	35.7	nested_or_merged	ltr_inside	7	outside annotated domains	GAG,PROT
+Kondara.ragtag_Chr1to5::Atha_Chr3.16662274-16670655_D_Athila	Kondara.ragtag_Chr1to5	Chr3	16662274	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Kyr-1.ragtag_Chr1to5::Atha_Chr1.14257796-14270417_D_Athila	Kyr-1.ragtag_Chr1to5	Chr1	14257796	2	4c	44.7	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Kyr-1.ragtag_Chr1to5::Atha_Chr3.16407212-16415593_D_Athila	Kyr-1.ragtag_Chr1to5	Chr3	16407212	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Kyr-1.ragtag_Chr1to5::Atha_Chr5.20285607-20297932_D_Athila	Kyr-1.ragtag_Chr1to5	Chr5	20285607	7	7a	26.6	crossover		0	outside annotated domains	GAG,PROT,RT,RH,INT
+Kz-9.ragtag_Chr1to5::Atha_Chr5.15365205-15378902_P_Athila	Kz-9.ragtag_Chr1to5	Chr5	15365205	2	9	36.5	crossover		0	outside annotated domains	GAG,PROT
+LI-OF-095.ragtag_Chr1to5::Atha_Chr3.17237601-17245936_D_Athila	LI-OF-095.ragtag_Chr1to5	Chr3	17237601	2	4c	33.7	crossover		0	within RT	GAG,RT,RH
+LI-OF-095.ragtag_Chr1to5::Atha_Chr5.14346522-14360193_P_Athila	LI-OF-095.ragtag_Chr1to5	Chr5	14346522	2	9	33.6	crossover		0	outside annotated domains	GAG,PROT
+LL-0.ragtag_Chr1to5::Atha_Chr3.18466328-18474709_D_Athila	LL-0.ragtag_Chr1to5	Chr3	18466328	2	4c	31.7	crossover		0	within RT	GAG,RT,RH
+Ler_2026::Atha_Chr5.15730032-15743469_P_Athila	Ler_2026	Chr5	15730032	2	9	30.6	crossover		2	outside annotated domains	GAG,PROT
+Meh-0.ragtag_Chr1to5::Atha_Chr3.12938971-12947513_D_Athila	Meh-0.ragtag_Chr1to5	Chr3	12938971	2	9	26.4	crossover		0	outside annotated domains	GAG,PROT
+Meh-0.ragtag_Chr1to5::Atha_Chr3.17777222-17788153_D_Athila	Meh-0.ragtag_Chr1to5	Chr3	17777222	6	2	41.8	crossover		1	outside annotated domains	GAG,PROT
+Meh-0.ragtag_Chr1to5::Atha_Chr4.9252870-9264408_P_Athila	Meh-0.ragtag_Chr1to5	Chr4	9252870	5	6a	27.7	crossover		0	outside annotated domains	
+Mh-0.ragtag_Chr1to5::Atha_Chr3.12648828-12660059_D_Athila	Mh-0.ragtag_Chr1to5	Chr3	12648828	9	2	26.2	nested_or_merged	ltr_inside	5	within RH	RH
+Ms-0.ragtag_Chr1to5::Atha_Chr3.17892601-17901462_D_Athila	Ms-0.ragtag_Chr1to5	Chr3	17892601	2	4c	36.9	crossover		0	within RT	GAG,RT,RH
+Nemrut-1.ragtag_Chr1to5::Atha_Chr5.15487709-15499710_D_Athila	Nemrut-1.ragtag_Chr1to5	Chr5	15487709	6	1	66.4	crossover		0	within INT	GAG,PROT,INT
+Nov-2.ragtag_Chr1to5::Atha_Chr3.16774580-16782961_D_Athila	Nov-2.ragtag_Chr1to5	Chr3	16774580	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Nz-1.ragtag_Chr1to5::Atha_Chr2.2968215-2980447_P_Athila	Nz-1.ragtag_Chr1to5	Chr2	2968215	1	8a	31.1	crossover		0	outside annotated domains	GAG,PROT
+Nz-1.ragtag_Chr1to5::Atha_Chr2.7361049-7372832_D_Athila	Nz-1.ragtag_Chr1to5	Chr2	7361049	4	1	50.3	crossover		2	outside annotated domains	GAG,PROT
+Nz-1.ragtag_Chr1to5::Atha_Chr3.16180034-16194418_D_Athila	Nz-1.ragtag_Chr1to5	Chr3	16180034	2	1	43.6	nested_or_merged	out_of_order	0	between INT and PROT	GAG,RT,RH,INT,PROT
+Nz-1.ragtag_Chr1to5::Atha_Chr3.18011748-18020125_D_Athila	Nz-1.ragtag_Chr1to5	Chr3	18011748	2	4c	32.9	crossover		0	within RT	GAG,RT,RH
+Nz-1.ragtag_Chr1to5::Atha_Chr4.7734238-7745804_P_Athila	Nz-1.ragtag_Chr1to5	Chr4	7734238	5	6a	27.4	crossover		0	outside annotated domains	
+Per-1.ragtag_Chr1to5::Atha_Chr3.17539770-17548631_D_Athila	Per-1.ragtag_Chr1to5	Chr3	17539770	2	4c	36.1	crossover		0	within RT	GAG,RT,RH
+Per-1.ragtag_Chr1to5::Atha_Chr5.16271823-16285509_P_Athila	Per-1.ragtag_Chr1to5	Chr5	16271823	2	9	37.0	nested_or_merged	ltr_inside	8	outside annotated domains	GAG,PROT
+Pra-6.ragtag_Chr1to5::Atha_Chr1.14177246-14189505_D_Athila	Pra-6.ragtag_Chr1to5	Chr1	14177246	2	4c	41.9	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Pra-6.ragtag_Chr1to5::Atha_Chr3.13251629-13265406_D_Athila	Pra-6.ragtag_Chr1to5	Chr3	13251629	2	1	51.9	crossover		0	outside annotated domains	GAG,PROT
+Pra-6.ragtag_Chr1to5::Atha_Chr4.6734133-6745673_P_Athila	Pra-6.ragtag_Chr1to5	Chr4	6734133	5	6a	26.4	crossover		0	outside annotated domains	
+Pu2-23_ragtagChr1to5::Atha_Chr1.14209858-14222117_D_Athila	Pu2-23_ragtagChr1to5	Chr1	14209858	2	4c	41.9	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Pu2-23_ragtagChr1to5::Atha_Chr3.16405779-16414088_D_Athila	Pu2-23_ragtagChr1to5	Chr3	16405779	2	4c	28.6	crossover		0	within RT	GAG,RT,RH
+Pyl-1.ragtag_Chr1to5::Atha_Chr3.17879132-17890088_D_Athila	Pyl-1.ragtag_Chr1to5	Chr3	17879132	6a	2	29.1	nested_or_merged	ltr_inside	9	outside annotated domains	GAG,PROT
+Pyl-1.ragtag_Chr1to5::Atha_Chr4.9237159-9248695_P_Athila	Pyl-1.ragtag_Chr1to5	Chr4	9237159	5	6a	26.4	crossover		0	outside annotated domains	
+Pyl-1.ragtag_Chr1to5::Atha_Chr5.18609703-18623376_P_Athila	Pyl-1.ragtag_Chr1to5	Chr5	18609703	2	9	33.2	crossover		2	outside annotated domains	GAG,PROT
+Qar-8a.ragtag_Chr1to5::Atha_Chr3.18535407-18543742_D_Athila	Qar-8a.ragtag_Chr1to5	Chr3	18535407	2	4c	35.5	crossover		0	within RT	GAG,RT,RH
+Qar-8a.ragtag_Chr1to5::Atha_Chr3.18632782-18645427_P_Athila	Qar-8a.ragtag_Chr1to5	Chr3	18632782	1	2	44.1	nested_or_merged	ltr_inside	10	outside annotated domains	GAG,PROT,RT,RH,INT
+RRS10.ragtag_Chr1to5::Atha_Chr3.18725297-18733079_D_Athila	RRS10.ragtag_Chr1to5	Chr3	18725297	2	4c	29.4	crossover		0	within RT	GAG,RT,RH
+Rab-R1.ragtag_Chr1to5::Atha_Chr2.7892980-7906524_D_Athila	Rab-R1.ragtag_Chr1to5	Chr2	7892980	1	4	48.5	nested_or_merged	ltr_inside	9	outside annotated domains	GAG,PROT
+Rld-2.ragtag_Chr1to5::Atha_Chr1.14267223-14279494_D_Athila	Rld-2.ragtag_Chr1to5	Chr1	14267223	2	4c	41.2	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Sah-0.ragtag_Chr1to5::Atha_Chr3.18304635-18313016_D_Athila	Sah-0.ragtag_Chr1to5	Chr3	18304635	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Sf-2.ragtag_Chr1to5::Atha_Chr3.17331321-17339683_D_Athila	Sf-2.ragtag_Chr1to5	Chr3	17331321	2	4c	30.5	crossover		0	within RT	GAG,RT,RH
+Sha.ragtag_Chr1to5::Atha_Chr1.14226716-14239337_D_Athila	Sha.ragtag_Chr1to5	Chr1	14226716	2	4c	45.0	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Sha.ragtag_Chr1to5::Atha_Chr3.17031302-17039683_D_Athila	Sha.ragtag_Chr1to5	Chr3	17031302	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Sha.ragtag_Chr1to5::Atha_Chr5.20821371-20833697_D_Athila	Sha.ragtag_Chr1to5	Chr5	20821371	7	7a	26.6	crossover		0	outside annotated domains	GAG,PROT,RT,RH,INT
+Sij-1.ragtag_Chr1to5::Atha_Chr3.16465068-16473449_D_Athila	Sij-1.ragtag_Chr1to5	Chr3	16465068	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Sij-1.ragtag_Chr1to5::Atha_Chr5.14335711-14349409_P_Athila	Sij-1.ragtag_Chr1to5	Chr5	14335711	2	9	36.1	crossover		0	outside annotated domains	GAG,PROT
+Sij-2.ragtag_Chr1to5::Atha_Chr3.16472303-16480684_D_Athila	Sij-2.ragtag_Chr1to5	Chr3	16472303	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Sij-2.ragtag_Chr1to5::Atha_Chr5.15074091-15087789_P_Athila	Sij-2.ragtag_Chr1to5	Chr5	15074091	2	9	36.1	crossover		0	outside annotated domains	GAG,PROT
+Sorbo.ragtag_Chr1to5::Atha_Chr2.6257477-6270160_P_Athila	Sorbo.ragtag_Chr1to5	Chr2	6257477	4c	6a	60.9	crossover		0	between GAG and PROT	GAG,PROT
+Sorbo.ragtag_Chr1to5::Atha_Chr3.16668016-16676397_D_Athila	Sorbo.ragtag_Chr1to5	Chr3	16668016	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Sorbo.ragtag_Chr1to5::Atha_Chr5.19551895-19564222_D_Athila	Sorbo.ragtag_Chr1to5	Chr5	19551895	7	7a	26.6	crossover		0	outside annotated domains	GAG,PROT,RT,RH,INT
+St-0.ragtag_Chr1to5::Atha_Chr1.14255605-14267864_D_Athila	St-0.ragtag_Chr1to5	Chr1	14255605	2	4c	41.9	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+St-0.ragtag_Chr1to5::Atha_Chr2.6035895-6047680_D_Athila	St-0.ragtag_Chr1to5	Chr2	6035895	4	1	49.0	crossover		1	outside annotated domains	GAG,PROT
+St-0.ragtag_Chr1to5::Atha_Chr3.18776119-18788253_D_Athila	St-0.ragtag_Chr1to5	Chr3	18776119	1	2	32.3	crossover		2	between GAG and PROT	GAG,PROT
+St-0.ragtag_Chr1to5::Atha_Chr4.8912352-8923878_P_Athila	St-0.ragtag_Chr1to5	Chr4	8912352	5	6a	27.1	crossover		0	outside annotated domains	
+St-0_kang_ragtag_Chr1to5::Atha_Chr1.14236963-14249222_D_Athila	St-0_kang_ragtag_Chr1to5	Chr1	14236963	2	4c	41.9	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+St-0_kang_ragtag_Chr1to5::Atha_Chr2.4842908-4854692_D_Athila	St-0_kang_ragtag_Chr1to5	Chr2	4842908	4	1	49.0	crossover		1	outside annotated domains	GAG,PROT
+St-0_kang_ragtag_Chr1to5::Atha_Chr3.15992939-16005073_D_Athila	St-0_kang_ragtag_Chr1to5	Chr3	15992939	1	2	32.3	crossover		2	between GAG and PROT	GAG,PROT
+St-0_kang_ragtag_Chr1to5::Atha_Chr4.8351398-8362924_P_Athila	St-0_kang_ragtag_Chr1to5	Chr4	8351398	5	6a	27.1	crossover		0	outside annotated domains	
+Stw-0_Chr1to5_2026::Atha_Chr2.6872434-6885114_P_Athila	Stw-0_Chr1to5_2026	Chr2	6872434	4c	6a	58.0	crossover		0	between GAG and PROT	GAG,PROT
+Stw-0_Chr1to5_2026::Atha_Chr4.7742249-7753789_P_Athila	Stw-0_Chr1to5_2026	Chr4	7742249	5	6a	26.4	crossover		0	outside annotated domains	
+Sus-1.ragtag_Chr1to5::Atha_Chr1.14216545-14229167_D_Athila	Sus-1.ragtag_Chr1to5	Chr1	14216545	2	4c	42.8	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Sus-1.ragtag_Chr1to5::Atha_Chr3.16813478-16821849_D_Athila	Sus-1.ragtag_Chr1to5	Chr3	16813478	2	4c	31.0	crossover		0	within RT	GAG,RT,RH
+Sus-1.ragtag_Chr1to5::Atha_Chr5.18847091-18859419_D_Athila	Sus-1.ragtag_Chr1to5	Chr5	18847091	7	7a	26.2	crossover		0	outside annotated domains	GAG,PROT,RT,RH,INT
+Tanz_merc.ragtag_Chr1to5::Atha_Chr3.19545659-19554060_D_Athila	Tanz_merc.ragtag_Chr1to5	Chr3	19545659	2	4c	32.7	crossover		0	within RT	GAG,RT,RH
+Tanz_wlod.ragtag_Chr1to5::Atha_Chr3.19760968-19769369_D_Athila	Tanz_wlod.ragtag_Chr1to5	Chr3	19760968	2	4c	32.7	crossover		0	within RT	GAG,RT,RH
+Tibet-0.ragtag_Chr1to5::Atha_Chr1.15651973-15661961_D_Athila	Tibet-0.ragtag_Chr1to5	Chr1	15651973	9	2	29.0	nested_or_merged	ltr_inside	27	outside annotated domains	GAG
+Tibet-0.ragtag_Chr1to5::Atha_Chr3.17111699-17125101_D_Athila	Tibet-0.ragtag_Chr1to5	Chr3	17111699	6	2	47.2	nested_or_merged	ltr_inside	10	outside annotated domains	GAG,PROT
+Tibet-0.ragtag_Chr1to5::Atha_Chr3.17146893-17159789_D_Athila	Tibet-0.ragtag_Chr1to5	Chr3	17146893	1	4	31.2	nested_or_merged	ltr_inside;mixed_strand	37	between GAG and PROT	GAG,PROT
+Toufl-1.ragtag_Chr1to5::Atha_Chr5.18239639-18251923_P_Athila	Toufl-1.ragtag_Chr1to5	Chr5	18239639	7	7a	26.3	crossover		0	outside annotated domains	GAG,PROT,RT,RH,INT
+TueSB30-3.ragtag_Chr1to5::Atha_Chr1.14202077-14214336_D_Athila	TueSB30-3.ragtag_Chr1to5	Chr1	14202077	2	4c	41.9	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+TueSB30-3.ragtag_Chr1to5::Atha_Chr4.2777932-2787474_D_Athila	TueSB30-3.ragtag_Chr1to5	Chr4	2777932	9	2	29.8	nested_or_merged	ltr_inside	16	outside annotated domains	GAG
+TueSB30-3.ragtag_Chr1to5::Atha_Chr4.8361006-8372548_P_Athila	TueSB30-3.ragtag_Chr1to5	Chr4	8361006	5	6a	26.7	crossover		0	outside annotated domains	
+Tul-0.ragtag_Chr1to5::Atha_Chr3.18593259-18601041_D_Athila	Tul-0.ragtag_Chr1to5	Chr3	18593259	2	4c	29.4	crossover		0	within RT	GAG,RT,RH
+Valsi-1.ragtag_Chr1to5::Atha_Chr4.8135936-8147477_P_Athila	Valsi-1.ragtag_Chr1to5	Chr4	8135936	5	6a	26.4	crossover		0	outside annotated domains	
+Yilong-0.ragtag_Chr1to5::Atha_Chr3.18556230-18564379_D_Athila	Yilong-0.ragtag_Chr1to5	Chr3	18556230	2	4c	30.2	crossover		0	within RT	GAG,RT,RH
+Zal-1_Chr1to5_2026::Atha_Chr1.14187402-14200023_D_Athila	Zal-1_Chr1to5_2026	Chr1	14187402	2	4c	44.7	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+Zal-1_Chr1to5_2026::Atha_Chr3.16322324-16330705_D_Athila	Zal-1_Chr1to5_2026	Chr3	16322324	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+Zal-1_Chr1to5_2026::Atha_Chr5.19265181-19277507_D_Athila	Zal-1_Chr1to5_2026	Chr5	19265181	7	7a	26.6	crossover		0	outside annotated domains	GAG,PROT,RT,RH,INT
+_1158_Chr1to5::Atha_Chr5.16375468-16389273_P_Athila	_1158_Chr1to5	Chr5	16375468	2	9	35.1	crossover		4	outside annotated domains	GAG,PROT
+_6024_Chr1to5::Atha_Chr3.17776000-17784860_D_Athila	_6024_Chr1to5	Chr3	17776000	2	4c	36.5	crossover		0	within RT	GAG,RT,RH
+_6024_Chr1to5::Atha_Chr5.16364855-16378334_P_Athila	_6024_Chr1to5	Chr5	16364855	2	9	31.2	crossover		2	outside annotated domains	GAG,PROT
+_Altai-5_ColChr1to5ragtag_Chr1to5::Atha_Chr1.14105976-14118597_D_Athila	_Altai-5_ColChr1to5ragtag_Chr1to5	Chr1	14105976	2	4c	43.8	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+_Altai-5_ColChr1to5ragtag_Chr1to5::Atha_Chr3.16245997-16254378_D_Athila	_Altai-5_ColChr1to5ragtag_Chr1to5	Chr3	16245997	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+_Altai-5_ColChr1to5ragtag_Chr1to5::Atha_Chr5.19317810-19330138_D_Athila	_Altai-5_ColChr1to5ragtag_Chr1to5	Chr5	19317810	7	7a	26.6	crossover		0	outside annotated domains	GAG,PROT,RT,RH,INT
+_Anz-0_ColChr1to5ragtag_Chr1to5::Atha_Chr4.10015282-10026668_D_Athila	_Anz-0_ColChr1to5ragtag_Chr1to5	Chr4	10015282	5	6a	27.4	crossover		0	outside annotated domains	
+_Anz-0_ColChr1to5ragtag_Chr1to5::Atha_Chr4.9874431-9885818_D_Athila	_Anz-0_ColChr1to5ragtag_Chr1to5	Chr4	9874431	5	6a	27.4	crossover		0	outside annotated domains	
+_Anz-0_ColChr1to5ragtag_Chr1to5::Atha_Chr5.17377002-17389003_D_Athila	_Anz-0_ColChr1to5ragtag_Chr1to5	Chr5	17377002	6	1	67.8	crossover		0	within INT	GAG,PROT,INT
+_Geg-14_ColChr1to5ragtag_Chr1to5::Atha_Chr3.17076446-17084817_D_Athila	_Geg-14_ColChr1to5ragtag_Chr1to5	Chr3	17076446	2	4c	31.0	crossover		0	within RT	GAG,RT,RH
+_Geg-14_ColChr1to5ragtag_Chr1to5::Atha_Chr4.7249359-7260901_P_Athila	_Geg-14_ColChr1to5ragtag_Chr1to5	Chr4	7249359	5	6a	26.4	crossover		0	outside annotated domains	
+_Geg-14_ColChr1to5ragtag_Chr1to5::Atha_Chr5.15153398-15166799_P_Athila	_Geg-14_ColChr1to5ragtag_Chr1to5	Chr5	15153398	2	9	32.9	crossover		1	outside annotated domains	GAG,PROT
+_Ice-1_ColChr1to5ragtag_Chr1to5::Atha_Chr2.5844406-5856173_D_Athila	_Ice-1_ColChr1to5ragtag_Chr1to5	Chr2	5844406	4	1	50.5	crossover		1	outside annotated domains	GAG,PROT
+_Ice-1_ColChr1to5ragtag_Chr1to5::Atha_Chr3.16121624-16129933_D_Athila	_Ice-1_ColChr1to5ragtag_Chr1to5	Chr3	16121624	2	4c	29.0	crossover		0	within RT	GAG,RT,RH
+_Ice-1_ColChr1to5ragtag_Chr1to5::Atha_Chr5.14690048-14703716_P_Athila	_Ice-1_ColChr1to5ragtag_Chr1to5	Chr5	14690048	2	9	33.4	crossover		3	outside annotated domains	GAG,PROT
+_No-0_ColChr1to5ragtag_Chr1to5::Atha_Chr1.14397493-14409752_D_Athila	_No-0_ColChr1to5ragtag_Chr1to5	Chr1	14397493	2	4c	41.9	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+_No-0_ColChr1to5ragtag_Chr1to5::Atha_Chr4.7030849-7041357_D_Athila	_No-0_ColChr1to5ragtag_Chr1to5	Chr4	7030849	9	1	27.1	crossover		0	outside annotated domains	GAG,PROT
+ragtag6137_ColChr1to5_Chr1to5::Atha_Chr4.2918337-2927879_D_Athila	ragtag6137_ColChr1to5_Chr1to5	Chr4	2918337	9	2	29.8	nested_or_merged	ltr_inside	16	outside annotated domains	GAG
+ragtag6137_ColChr1to5_Chr1to5::Atha_Chr4.8579598-8591140_P_Athila	ragtag6137_ColChr1to5_Chr1to5	Chr4	8579598	5	6a	26.7	crossover		0	outside annotated domains	
+ragtag7143_ColChr1to5_Chr1to5::Atha_Chr3.16707844-16716705_D_Athila	ragtag7143_ColChr1to5_Chr1to5	Chr3	16707844	2	4c	36.5	crossover		0	within RT	GAG,RT,RH
+ragtag9336_ColChr1to5_Chr1to5::Atha_Chr3.17851800-17860660_D_Athila	ragtag9336_ColChr1to5_Chr1to5	Chr3	17851800	2	4c	36.1	crossover		0	within RT	GAG,RT,RH
+ragtag9503_ColChr1to5_fixed::Atha_Chr2.2572824-2585056_P_Athila	ragtag9503_ColChr1to5_fixed	Chr2	2572824	1	8a	31.1	crossover		0	outside annotated domains	GAG,PROT
+ragtag9744_ColChr1to5_Chr1to5::Atha_Chr5.16019392-16032827_P_Athila	ragtag9744_ColChr1to5_Chr1to5	Chr5	16019392	2	9	30.3	crossover		2	outside annotated domains	GAG,PROT
+ragtag9762_ColChr1to5_Chr1to5::Atha_Chr4.9141157-9151596_D_Athila	ragtag9762_ColChr1to5_Chr1to5	Chr4	9141157	9	1	26.7	crossover		0	outside annotated domains	GAG,PROT
+ragtag9879_ColChr1to5_Chr1to5::Atha_Chr3.17655039-17663391_D_Athila	ragtag9879_ColChr1to5_Chr1to5	Chr3	17655039	2	4c	34.1	crossover		0	within RT	GAG,RT,RH
+ragtag9883_ColChr1to5_Chr1to5::Atha_Chr3.13409362-13423130_D_Athila	ragtag9883_ColChr1to5_Chr1to5	Chr3	13409362	2	1	46.9	crossover		0	between GAG and PROT	GAG,PROT
+ragtag9883_ColChr1to5_Chr1to5::Atha_Chr5.13342409-13354428_P_Athila	ragtag9883_ColChr1to5_Chr1to5	Chr5	13342409	6	1	65.9	crossover		0	within INT	GAG,PROT,INT
+ragtag9900_ColChr1to5_Chr1to5::Atha_Chr3.18030148-18038529_D_Athila	ragtag9900_ColChr1to5_Chr1to5	Chr3	18030148	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+ragtag9900_ColChr1to5_Chr1to5::Atha_Chr5.15554737-15566757_D_Athila	ragtag9900_ColChr1to5_Chr1to5	Chr5	15554737	6	1	67.2	crossover		0	within INT	GAG,PROT,INT
+ragtagANGE-B-2_ColChr1to5_Chr1to5::Atha_Chr2.8138395-8150141_D_Athila	ragtagANGE-B-2_ColChr1to5_Chr1to5	Chr2	8138395	4	1	50.3	crossover		3	outside annotated domains	GAG,PROT
+ragtagANGE-B-2_ColChr1to5_Chr1to5::Atha_Chr3.18073402-18081754_D_Athila	ragtagANGE-B-2_ColChr1to5_Chr1to5	Chr3	18073402	2	4c	34.6	crossover		0	within RT	GAG,RT,RH
+ragtagAUZE-A-5_ColChr1to5_Chr1to5::Atha_Chr4.7382297-7393852_D_Athila	ragtagAUZE-A-5_ColChr1to5_Chr1to5	Chr4	7382297	5	6a	26.4	crossover		0	outside annotated domains	
+ragtagAUZE-A-5_ColChr1to5_Chr1to5::Atha_Chr5.15519488-15531508_D_Athila	ragtagAUZE-A-5_ColChr1to5_Chr1to5	Chr5	15519488	6	1	66.8	crossover		0	within INT	GAG,PROT,INT
+ragtagAlo-0_ColChr1to5_Chr1to5::Atha_Chr3.13399006-13412760_D_Athila	ragtagAlo-0_ColChr1to5_Chr1to5	Chr3	13399006	2	1	48.6	crossover		0	between GAG and PROT	GAG,PROT
+ragtagAlo-0_ColChr1to5_Chr1to5::Atha_Chr4.8339430-8350996_P_Athila	ragtagAlo-0_ColChr1to5_Chr1to5	Chr4	8339430	5	6a	27.4	crossover		0	outside annotated domains	
+ragtagBANI-C-12_ColChr1to5_Chr1to5::Atha_Chr1.14291161-14302368_D_Athila	ragtagBANI-C-12_ColChr1to5_Chr1to5	Chr1	14291161	3	9	64.1	crossover		0	outside annotated domains	GAG,PROT
+ragtagBANI-C-12_ColChr1to5_Chr1to5::Atha_Chr3.18071314-18079666_D_Athila	ragtagBANI-C-12_ColChr1to5_Chr1to5	Chr3	18071314	2	4c	34.6	crossover		0	within RT	GAG,RT,RH
+ragtagBANI-C-12_ColChr1to5_Chr1to5::Atha_Chr4.8657073-8668628_P_Athila	ragtagBANI-C-12_ColChr1to5_Chr1to5	Chr4	8657073	5	6a	26.4	crossover		0	outside annotated domains	
+ragtagBANI-C-12_ColChr1to5_Chr1to5::Atha_Chr5.16447967-16459259_P_Athila	ragtagBANI-C-12_ColChr1to5_Chr1to5	Chr5	16447967	2	5	38.5	crossover		0	outside annotated domains	GAG,PROT
+ragtagBARA-C-3_ColChr1to5_Chr1to5::Atha_Chr2.2980331-2992561_P_Athila	ragtagBARA-C-3_ColChr1to5_Chr1to5	Chr2	2980331	1	8a	31.1	crossover		0	outside annotated domains	GAG,PROT
+ragtagBARA-C-3_ColChr1to5_Chr1to5::Atha_Chr4.6998087-7009642_D_Athila	ragtagBARA-C-3_ColChr1to5_Chr1to5	Chr4	6998087	5	6a	26.4	crossover		0	outside annotated domains	
+ragtagBARC-A-12_ColChr1to5_Chr1to5::Atha_Chr3.16432067-16440459_D_Athila	ragtagBARC-A-12_ColChr1to5_Chr1to5	Chr3	16432067	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+ragtagBARC-A-12_ColChr1to5_Chr1to5::Atha_Chr4.1230977-1241485_P_Athila	ragtagBARC-A-12_ColChr1to5_Chr1to5	Chr4	1230977	9	1	27.1	crossover		0	outside annotated domains	GAG,PROT
+ragtagBARC-A-17_ColChr1to5_Chr1to5::Atha_Chr3.16429489-16437881_D_Athila	ragtagBARC-A-17_ColChr1to5_Chr1to5	Chr3	16429489	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+ragtagBARC-A-17_ColChr1to5_Chr1to5::Atha_Chr4.8111197-8121705_D_Athila	ragtagBARC-A-17_ColChr1to5_Chr1to5	Chr4	8111197	9	1	27.1	crossover		0	outside annotated domains	GAG,PROT
+ragtagBELC-C-10_ColChr1to5_Chr1to5::Atha_Chr3.13237333-13251100_D_Athila	ragtagBELC-C-10_ColChr1to5_Chr1to5	Chr3	13237333	2	1	50.5	crossover		0	between GAG and PROT	GAG,PROT
+ragtagBROU-A-10_ColChr1to5_Chr1to5::Atha_Chr4.7328989-7340544_P_Athila	ragtagBROU-A-10_ColChr1to5_Chr1to5	Chr4	7328989	5	6a	26.4	crossover		0	outside annotated domains	
+ragtagCAMA-C-2_ColChr1to5_Chr1to5::Atha_Chr3.17560455-17568791_D_Athila	ragtagCAMA-C-2_ColChr1to5_Chr1to5	Chr3	17560455	2	4c	35.6	crossover		0	within RT	GAG,RT,RH
+ragtagCAMA-C-9_ColChr1to5_Chr1to5::Atha_Chr3.17564115-17572451_D_Athila	ragtagCAMA-C-9_ColChr1to5_Chr1to5	Chr3	17564115	2	4c	35.6	crossover		0	within RT	GAG,RT,RH
+ragtagCas-0_ColChr1to5_Chr1to5::Atha_Chr3.19208025-19216386_D_Athila	ragtagCas-0_ColChr1to5_Chr1to5	Chr3	19208025	2	4c	32.7	crossover		0	within RT	GAG,RT,RH
+ragtagCas-0_ColChr1to5_Chr1to5::Atha_Chr4.8493875-8505430_P_Athila	ragtagCas-0_ColChr1to5_Chr1to5	Chr4	8493875	5	6a	26.4	crossover		0	outside annotated domains	
+ragtagCas-6_ColChr1to5_Chr1to5::Atha_Chr3.18098240-18106602_D_Athila	ragtagCas-6_ColChr1to5_Chr1to5	Chr3	18098240	2	4c	30.5	crossover		0	within RT	GAG,RT,RH
+ragtagCat-0_ColChr1to5_Chr1to5::Atha_Chr3.17837887-17846250_D_Athila	ragtagCat-0_ColChr1to5_Chr1to5	Chr3	17837887	2	4c	30.9	crossover		0	within RT	GAG,RT,RH
+ragtagCol-0_ColChr1to5_Chr1to5::Atha_Chr1.14327742-14340322_D_Athila	ragtagCol-0_ColChr1to5_Chr1to5	Chr1	14327742	2	4c	39.6	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+ragtagCol-0_ColChr1to5_Chr1to5::Atha_Chr2.7503122-7514908_D_Athila	ragtagCol-0_ColChr1to5_Chr1to5	Chr2	7503122	4	1	48.0	crossover		0	outside annotated domains	GAG,PROT
+ragtagCvi-0_ColChr1to5_Chr1to5::Atha_Chr1.14241784-14253023_D_Athila	ragtagCvi-0_ColChr1to5_Chr1to5	Chr1	14241784	4c	2	38.1	nested_or_merged	ltr_inside	6	outside annotated domains	GAG,PROT
+ragtagERR8705874_ColChr1to5_Chr1to5::Atha_Chr2.6054881-6066868_P_Athila	ragtagERR8705874_ColChr1to5_Chr1to5	Chr2	6054881	2	6a	35.2	crossover		0	between GAG and PROT	GAG,PROT
+ragtagERR8705874_ColChr1to5_Chr1to5::Atha_Chr3.13261595-13275372_D_Athila	ragtagERR8705874_ColChr1to5_Chr1to5	Chr3	13261595	2	1	51.0	crossover		0	between GAG and PROT	GAG,PROT
+ragtagERR8705874_ColChr1to5_Chr1to5::Atha_Chr3.18428854-18437687_D_Athila	ragtagERR8705874_ColChr1to5_Chr1to5	Chr3	18428854	2	4c	35.2	crossover		0	within RT	GAG,RT,RH
+ragtagEvs-0_ColChr1to5_Chr1to5::Atha_Chr4.9304446-9315977_P_Athila	ragtagEvs-0_ColChr1to5_Chr1to5	Chr4	9304446	5	6a	26.4	crossover		0	outside annotated domains	
+ragtagEvs-12_ColChr1to5_Chr1to5::Atha_Chr4.9065205-9076736_P_Athila	ragtagEvs-12_ColChr1to5_Chr1to5	Chr4	9065205	5	6a	26.4	crossover		0	outside annotated domains	
+ragtagFERR-A-12_ColChr1to5_Chr1to5::Atha_Chr3.17676692-17685084_D_Athila	ragtagFERR-A-12_ColChr1to5_Chr1to5	Chr3	17676692	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+ragtagFERR-A-8_ColChr1to5_Chr1to5::Atha_Chr3.17665472-17673853_D_Athila	ragtagFERR-A-8_ColChr1to5_Chr1to5	Chr3	17665472	2	4c	34.6	crossover		0	within RT	GAG,RT,RH
+ragtagGAIL-B-11_ColChr1to5_Chr1to5::Atha_Chr3.13512941-13526708_D_Athila	ragtagGAIL-B-11_ColChr1to5_Chr1to5	Chr3	13512941	2	1	51.5	crossover		0	between GAG and PROT	GAG,PROT
+ragtagHom-0_ColChr1to5_Chr1to5::Atha_Chr3.17321185-17335568_D_Athila	ragtagHom-0_ColChr1to5_Chr1to5	Chr3	17321185	2	1	44.4	nested_or_merged	out_of_order	0	between INT and PROT	GAG,RT,RH,INT,PROT
+ragtagHom-0_ColChr1to5_Chr1to5::Atha_Chr3.19133772-19142173_D_Athila	ragtagHom-0_ColChr1to5_Chr1to5	Chr3	19133772	2	4c	33.3	crossover		0	within RT	GAG,RT,RH
+ragtagHom-4_ColChr1to5_Chr1to5::Atha_Chr2.6001743-6013526_D_Athila	ragtagHom-4_ColChr1to5_Chr1to5	Chr2	6001743	4	1	48.4	crossover		0	outside annotated domains	GAG,PROT
+ragtagHom-4_ColChr1to5_Chr1to5::Atha_Chr3.17991613-17999885_D_Athila	ragtagHom-4_ColChr1to5_Chr1to5	Chr3	17991613	2	4c	35.1	crossover		0	within RT	GAG,RT,RH
+ragtagHum-2_ColChr1to5_Chr1to5::Atha_Chr3.18665765-18674116_D_Athila	ragtagHum-2_ColChr1to5_Chr1to5	Chr3	18665765	2	4c	34.6	crossover		0	within RT	GAG,RT,RH
+ragtagHum-4_ColChr1to5_Chr1to5::Atha_Chr3.16689894-16698275_D_Athila	ragtagHum-4_ColChr1to5_Chr1to5	Chr3	16689894	2	4c	35.1	crossover		0	within RT	GAG,RT,RH
+ragtagHum-4_ColChr1to5_Chr1to5::Atha_Chr5.15291903-15303923_D_Athila	ragtagHum-4_ColChr1to5_Chr1to5	Chr5	15291903	6	1	67.3	crossover		0	within INT	GAG,PROT,INT
+ragtagLACR-C-14_ColChr1to5_Chr1to5::Atha_Chr3.13113794-13127559_D_Athila	ragtagLACR-C-14_ColChr1to5_Chr1to5	Chr3	13113794	2	1	48.6	crossover		0	between GAG and PROT	GAG,PROT
+ragtagLACR-C-14_ColChr1to5_Chr1to5::Atha_Chr4.7156438-7167993_D_Athila	ragtagLACR-C-14_ColChr1to5_Chr1to5	Chr4	7156438	5	6a	26.4	crossover		0	outside annotated domains	
+ragtagLor-16_ColChr1to5_Chr1to5::Atha_Chr3.16490830-16503655_D_Athila	ragtagLor-16_ColChr1to5_Chr1to5	Chr3	16490830	6a	9	30.6	nested_or_merged	ltr_inside	42	outside annotated domains	GAG,PROT
+ragtagMERE-A-13_ColChr1to5_Chr1to5::Atha_Chr3.18116398-18124750_D_Athila	ragtagMERE-A-13_ColChr1to5_Chr1to5	Chr3	18116398	2	4c	34.6	crossover		0	within RT	GAG,RT,RH
+ragtagMONTM-B-16_ColChr1to5_Chr1to5::Atha_Chr4.8317450-8329016_P_Athila	ragtagMONTM-B-16_ColChr1to5_Chr1to5	Chr4	8317450	5	6a	27.4	crossover		0	outside annotated domains	
+ragtagMONTM-B-7_ColChr1to5_Chr1to5::Atha_Chr4.8076218-8087784_P_Athila	ragtagMONTM-B-7_ColChr1to5_Chr1to5	Chr4	8076218	5	6a	27.4	crossover		0	outside annotated domains	
+ragtagMONTM-B-7_ColChr1to5_Chr1to5::Atha_Chr5.15228658-15242476_P_Athila	ragtagMONTM-B-7_ColChr1to5_Chr1to5	Chr5	15228658	2	9	37.1	crossover		2	outside annotated domains	GAG,PROT
+ragtagMdc-14_ColChr1to5_Chr1to5::Atha_Chr3.18940581-18948943_D_Athila	ragtagMdc-14_ColChr1to5_Chr1to5	Chr3	18940581	2	4c	34.6	crossover		0	within RT	GAG,RT,RH
+ragtagMdc-14_ColChr1to5_Chr1to5::Atha_Chr4.7899687-7910195_D_Athila	ragtagMdc-14_ColChr1to5_Chr1to5	Chr4	7899687	9	1	27.1	crossover		0	outside annotated domains	GAG,PROT
+ragtagMed-0_ColChr1to5_Chr1to5::Atha_Chr3.17915306-17923637_D_Athila	ragtagMed-0_ColChr1to5_Chr1to5	Chr3	17915306	2	4c	34.0	crossover		0	within RT	GAG,RT,RH
+ragtagMed-3_ColChr1to5_Chr1to5::Atha_Chr2.6028656-6040442_D_Athila	ragtagMed-3_ColChr1to5_Chr1to5	Chr2	6028656	4	1	48.4	crossover		0	outside annotated domains	GAG,PROT
+ragtagMet-6_ColChr1to5_Chr1to5::Atha_Chr3.18038631-18046967_D_Athila	ragtagMet-6_ColChr1to5_Chr1to5	Chr3	18038631	2	4c	35.6	crossover		0	within RT	GAG,RT,RH
+ragtagMr-0_ColChr1to5ragtag_Chr1to5::Atha_Chr3.17058671-17067009_D_Athila	ragtagMr-0_ColChr1to5ragtag_Chr1to5	Chr3	17058671	2	4c	35.6	crossover		0	within RT	GAG,RT,RH
+ragtagPREI-A-14_ColChr1to5_Chr1to5::Atha_Chr4.7986072-7997627_D_Athila	ragtagPREI-A-14_ColChr1to5_Chr1to5	Chr4	7986072	5	6a	26.4	crossover		0	outside annotated domains	
+ragtagSALE-A-10_ColChr1to5_Chr1to5::Atha_Chr2.6343249-6355932_P_Athila	ragtagSALE-A-10_ColChr1to5_Chr1to5	Chr2	6343249	4c	6a	61.8	crossover		0	between GAG and PROT	GAG,PROT
+ragtagSALE-A-10_ColChr1to5_Chr1to5::Atha_Chr2.6601408-6610983_D_Athila	ragtagSALE-A-10_ColChr1to5_Chr1to5	Chr2	6601408	4	1	48.9	crossover		2	outside annotated domains	GAG,PROT
+ragtagSALE-A-10_ColChr1to5_Chr1to5::Atha_Chr3.17927223-17935615_D_Athila	ragtagSALE-A-10_ColChr1to5_Chr1to5	Chr3	17927223	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+ragtagSALE-A-17_ColChr1to5_Chr1to5::Atha_Chr2.6215464-6228147_P_Athila	ragtagSALE-A-17_ColChr1to5_Chr1to5	Chr2	6215464	4c	6a	61.8	crossover		0	between GAG and PROT	GAG,PROT
+ragtagSALE-A-17_ColChr1to5_Chr1to5::Atha_Chr2.6473619-6483194_D_Athila	ragtagSALE-A-17_ColChr1to5_Chr1to5	Chr2	6473619	4	1	48.9	crossover		2	outside annotated domains	GAG,PROT
+ragtagSALE-A-17_ColChr1to5_Chr1to5::Atha_Chr3.17996061-18004453_D_Athila	ragtagSALE-A-17_ColChr1to5_Chr1to5	Chr3	17996061	2	4c	34.2	crossover		0	within RT	GAG,RT,RH
+ragtagSan-9_ColChr1to5_Chr1to5::Atha_Chr3.12960225-12968749_D_Athila	ragtagSan-9_ColChr1to5_Chr1to5	Chr3	12960225	2	9	26.4	crossover		0	outside annotated domains	GAG,PROT
+ragtagSan-9_ColChr1to5_Chr1to5::Atha_Chr3.17010882-17019188_D_Athila	ragtagSan-9_ColChr1to5_Chr1to5	Chr3	17010882	2	4c	30.6	crossover		0	within RT	GAG,RT,RH
+ragtagSan-9_ColChr1to5_Chr1to5::Atha_Chr4.3474206-3483534_D_Athila	ragtagSan-9_ColChr1to5_Chr1to5	Chr4	3474206	9	2	27.6	nested_or_merged	ltr_inside	22	outside annotated domains	GAG
+ragtagSln-22_ColChr1to5_Chr1to5::Atha_Chr3.16821310-16829862_P_Athila	ragtagSln-22_ColChr1to5_Chr1to5	Chr3	16821310	6	4	27.0	crossover		0	outside annotated domains	GAG,PROT
+ws-4.ragtag_Chr1to5::Atha_Chr1.14147592-14159863_D_Athila	ws-4.ragtag_Chr1to5	Chr1	14147592	2	4c	41.5	crossover		0	between PROT and RT	GAG,PROT,RT,RH,INT
+ws-4.ragtag_Chr1to5::Atha_Chr2.6630668-6643348_P_Athila	ws-4.ragtag_Chr1to5	Chr2	6630668	4c	6a	58.0	crossover		0	between GAG and PROT	GAG,PROT
+ws-4.ragtag_Chr1to5::Atha_Chr3.17423380-17432241_D_Athila	ws-4.ragtag_Chr1to5	Chr3	17423380	2	4c	36.1	crossover		0	within RT	GAG,RT,RH
+ws-4.ragtag_Chr1to5::Atha_Chr5.16816713-16830399_P_Athila	ws-4.ragtag_Chr1to5	Chr5	16816713	2	9	37.0	nested_or_merged	ltr_inside	8	outside annotated domains	GAG,PROT
