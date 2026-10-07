@@ -86,10 +86,6 @@ inter_table = table(["partners", "foreign domain", "elements"],
                     [[p.replace("Athila+", "ATHILA + "), s.replace(";", " + "), str(n)]
                      for (p, s), n in inter.most_common()], num=(2,))
 
-# census
-h, rows = tsv(f"{R}/fragments/copies_with_context.tsv")
-lab = Counter(r[6] for r in rows)
-accs = len({r[1] for r in rows})
 
 # ------------------------------------------------------------------- page --- #
 CSS = """
@@ -176,7 +172,7 @@ S.append(f"""<title>ATHILA Recombination Atlas</title>
   <div class="eyebrow">Athila LTR retrotransposons · 153 Arabidopsis thaliana genomes</div>
   <h1>How ATHILA families recombine, and where</h1>
   <p class="lede">Do ATHILA domains stay with their family along the whole element, or do elements carry pieces from different families? This report collects every analysis run so far: detection, validation, the families that recombine, how that relates to homology and to the centromere, and what happens to the copies that are chopped up.</p>
-  <div class="meta"><span><b>153</b> genomes</span><span><b>19,592</b> TEsorter-classified elements</span><span><b>{len(rows):,}</b> ATHILA-derived copies genome-wide</span><span><b>148</b> genomes with CEN178 annotation</span><span>Built 7 Oct 2026</span></div>
+  <div class="meta"><span><b>153</b> genomes</span><span><b>19,592</b> TEsorter-classified elements</span><span><b>21,118</b> Athilafinder intact elements</span><span><b>15,343</b> Athilafinder solo LTRs</span><span><b>148</b> genomes with CEN178 annotation</span><span>Built 7 Oct 2026</span></div>
 </header>
 
 <nav class="toc" aria-label="Sections">
@@ -190,7 +186,7 @@ S.append(f"""<title>ATHILA Recombination Atlas</title>
   <a href="#partners"><span>7</span>Who recombines with whom</a>
   <a href="#centro"><span>8</span>Centrophilic and centrophobic families</a>
   <a href="#age"><span>9</span>Age: two regimes</a>
-  <a href="#all"><span>10</span>All copies: chopping and junctions</a>
+  <a href="#all"><span>10</span>Deletions and solo LTRs</a>
   <a href="#caveats"><span>11</span>Caveats and next steps</a>
   <a href="#files"><span>12</span>Files and code</a>
 </nav>
@@ -204,8 +200,8 @@ S.append(f"""<title>ATHILA Recombination Atlas</title>
 <li><b>Partner choice is not random.</b>ATHILA6a–6b, 1–6, 2–4c, 7–7a and 0–3 recombine more than expected; ATHILA1 and ATHILA2, the two most common families, recombine with each other four times less than abundance predicts.</li>
 <li><b>Centrophilic families (ATHILA5, 6b, 1) never recombine with each other</b> (0 events vs ~10.6 expected); their recombination partners are neutral or centrophobic families.</li>
 <li><b>Two regimes by age.</b>The youngest recombinants are ATHILA6a×6b chimeras with near-identical LTRs, half of them centromeric, consistent with recombination during retrotransposition. The oldest are ATHILA2×4c and 2×6b in pericentromeres.</li>
-<li><b>Most ATHILA sequence is chopped.</b>A typical genome has 128 intact elements, 87 solo LTRs and about 400 internal fragments. Centrophobic families are 4–25 times more fragmented than centrophilic ones; copies inside centromeres are the least fragmented and form the fewest solo LTRs.</li>
-<li><b>Deletion junctions show little microhomology.</b>Clean internal deletions are no more microhomology-rich than random breakpoints (a weak excess at ≥4 bp in fragments), unlike family switches, which sit in long shared sequence.</li>
+<li><b>Centrophobic families are chopped more.</b>Among Athilafinder intact elements, 21–39% of centrophobic family copies have lost more than half of their internal region, against 1–9% for centrophilic families. Centromeric copies are the least deleted and form the fewest solo LTRs (32% vs 45–49% elsewhere).</li>
+<li><b>Internal deletions cluster around RT–RH and show no microhomology signature.</b>188 distinct deletions start most often near RH (about five times the uniform rate). Their junctions carry no more microhomology than random breakpoints, unlike family switches, which sit in long shared sequence.</li>
 </ul></div></section>
 """)
 
@@ -308,23 +304,24 @@ S.append(f"""<section id="age"><span class="sec-num">9</span><div class="col">
 """)
 
 S.append(f"""<section id="all"><span class="sec-num">10</span><div class="col">
-<h2>All copies: chopping and junctions</h2>
-<p>To include truncated copies, every chromosome of every genome was aligned to the ATHILA exemplars and the hits merged into copies. Copies matching an Athilafinder intact element or solo LTR keep that label; everything else is a fragment.</p>
+<h2>Deletions and solo LTRs</h2>
+<p>This section uses only Athilafinder's own calls: its intact elements and its solo LTRs. Each intact element was split-aligned to its family consensus to measure how much of the internal region is present and to classify every junction between aligned pieces.</p>
 </div>
-<div class="kv"><div><div class="v">128</div><div class="k">intact elements per genome (median)</div></div>
-<div><div class="v">87</div><div class="k">solo LTRs per genome</div></div>
-<div><div class="v">397</div><div class="k">internal fragments per genome</div></div>
-<div><div class="v">188</div><div class="k">LTR fragments per genome</div></div></div>
-{fig(f"{R}/report_figs/fragments.png", "Internal fragments per intact element by family and by context", "Centrophobic families are the most fragmented, centrophilic the least. Copies inside centromeres are the least fragmented, partly because they are younger.")}
+<div class="kv"><div><div class="v">21,118</div><div class="k">Athilafinder intact elements</div></div>
+<div><div class="v">15,343</div><div class="k">Athilafinder solo LTRs</div></div>
+<div><div class="v">15%</div><div class="k">intact elements missing more than half of the internal consensus</div></div>
+<div><div class="v">188</div><div class="k">distinct internal deletions (1,636 junctions)</div></div></div>
+{fig(f"{R}/report_figs/completeness.png", "Share of heavily deleted intact elements by family and by context", "Elements counted as heavily deleted when their alignment covers less than half of the family's internal consensus. ATHILA3 is low here but has a median completeness of only 71%; its TAIR12 exemplar may be the non-autonomous one, so most copies look partly incomplete.")}
 <div class="col"><h3>Solo LTRs: LTR–LTR recombination</h3>
 <p>A solo LTR is left when the two LTRs of an element recombine and delete the internal region. Solo LTRs are rarer inside centromeres (32% of LTR-bearing copies) than in pericentromeres (45%) or on arms (49%); centromeric versus the rest gives an odds ratio of 0.55, p = 6 × 10⁻¹⁰⁸. The same holds within most families, for example ATHILA5 at 11% inside the centromere against 39% in the pericentromere. Centromeric copies are younger, so part of this is time; solo LTRs cannot be dated, so the two cannot be fully separated.</p></div>
-{fig(f"{R}/report_figs/solo_ltr.png", "Solo-LTR fraction by LTR family and context", "LTR families are groups where TAIR12 exemplars share an LTR: ATHILA6 = 6/6a/6b, ATHILA3 = 0/3, ATHILA7 = 7/7a.")}
-<div class="col"><h3>Junctions inside copies</h3>
-<p>Each copy was split-aligned to the family consensus and every junction between consecutive pieces classified. Fragments carry about 18 times more inversions and 4 times more duplications and LTR family switches than intact elements.</p></div>
-{fig(f"{R}/report_figs/junction_rates.png", "Rearrangement junctions per 100 copies in intact elements and fragments", "LTR–internal family mismatches are not shown: several TAIR12 LTR exemplars are shared between families, so they are not evidence of recombination.")}
-<div class="col"><p>Microhomology was measured exactly from the consensus at each clean deletion and compared with random breakpoint pairs at the same distance. After collapsing deletions inherited across genomes (599 fragment deletions are 86 distinct junctions), there is no enrichment in intact elements and only a weak excess at ≥4 bp in fragments (5.8% vs 2.1%). By contrast, clean family switches have a median of 60 bp of shared sequence at the junction, as expected for homologous recombination.</p></div>
-{fig(f"{R}/report_figs/microhomology.png", "Microhomology at clean deletion junctions against random breakpoints", "Unique deletion junctions only.")}
-{fig(f"{R}/report_figs/truncation.png", "Positions of fragment truncation ends along the family consensus", "Fragment ends are spread almost uniformly along the consensus: a mild excess 3′ of INT and between GAG and PROT, fewer between PROT and RT. Domain positions are projected from TEsorter annotation of full-length elements.")}
+{fig(f"{R}/report_figs/solo_ltr.png", "Solo-LTR fraction by LTR family and context", "Families are assigned from the LTR. Groups share a TAIR12 LTR exemplar: ATHILA6 = 6/6a/6b, ATHILA3 = 0/3, ATHILA7 = 7/7a.")}
+<div class="col"><h3>Where internal deletions fall</h3>
+<p>Deletions inherited across accessions were collapsed, leaving 188 distinct deletions. They start most often around RH and RT, removing the pol region, which matches how non-autonomous ATHILA derivatives lack pol genes.</p></div>
+{fig(f"{R}/report_figs/deletion_positions.png", "Start positions of internal deletions along the family consensus", "Domain positions are projected from TEsorter annotation of full-length elements onto each consensus. Includes clean deletions and deletions where the missing segment is replaced by unrelated sequence.")}
+<div class="col"><h3>Junction types and microhomology</h3>
+<p>Most junctions inside intact elements are deletions where the missing segment is replaced by about 1 kb of non-ATHILA sequence, probably nested insertions. Clean deletions are rarer. Their microhomology, measured exactly from the consensus, is no higher than at random breakpoint pairs at the same distance. Clean family switches are the opposite: a median of 60 bp of shared sequence at the junction, as expected for homologous recombination.</p></div>
+{fig(f"{R}/report_figs/junction_rates.png", "Rearrangement junctions per 100 intact elements", "LTR–internal family mismatches are not shown: several TAIR12 LTR exemplars are shared between families, so they are not evidence of recombination.")}
+{fig(f"{R}/report_figs/microhomology.png", "Microhomology at clean deletion junctions against random breakpoints", "Unique deletion junctions only.", wide=False)}
 </section>
 """)
 
@@ -336,10 +333,10 @@ S.append("""<section id="caveats"><span class="sec-num">11</span><div class="col
 <li>Sister families can share pericentromeric niches, which raises local opportunity independently of homology.</li>
 <li>ATHILA7, 8a and 8b have no clean elements, so their markers come from exemplars only.</li>
 <li>Young ATHILA6a×6b mosaics could also be an intermediate ATHILA6 lineage absent from the exemplars. Building a consensus for that group would separate the two.</li>
-<li>Centromeric copies are younger, which partly explains their lower solo-LTR and fragment rates.</li>
-<li>Copy discovery uses minimap2 at ≥70% identity, so very old, highly diverged remnants are missed.</li>
+<li>Centromeric copies are younger, which partly explains their lower solo-LTR and deletion rates.</li>
+<li>Only Athilafinder intact elements and solo LTRs are analysed; truncated copies that Athilafinder did not call are not included.</li>
 </ul>
-<p>Useful next steps: phylogenetic confirmation of the 6a×6b and 2×4c recombinants; breakpoint-level homology instead of family-level; an ATHILA6 subfamily consensus; and a nested-insertion filter for the "deletion with insert" junctions.</p>
+<p>Useful next steps: phylogenetic confirmation of the 6a×6b and 2×4c recombinants; breakpoint-level homology instead of family-level; an ATHILA6 subfamily consensus; and identifying the sequence inserted at "deletion with insert" junctions.</p>
 </div></section>
 
 <section id="files"><span class="sec-num">12</span><div class="col">
@@ -350,7 +347,7 @@ S.append("""<section id="caveats"><span class="sec-num">11</span><div class="col
 <li><code>island_scan.py</code>, <code>conv_power.py</code>: crossover vs conversion and detection power</li>
 <li><code>recomb_bias_kmer.py</code>, <code>perm_pairs.py</code>: homology association and partner permutation</li>
 <li><code>centro_class.py</code>, <code>centro_network.py</code>: centromere classification and network</li>
-<li><code>genome_copies.py</code>, <code>junction_scan.py</code>, <code>fragment_analysis.py</code>, <code>solo_ltr.py</code>, <code>age_effects.py</code>: all copies, junctions, solo LTRs and age</li>
+<li><code>junction_scan.py</code>, <code>solo_ltr.py</code>, <code>age_effects.py</code>: junctions and completeness, solo LTRs and age</li>
 </ul>
 </div></section>
 <footer>Analysis by Jacob Gonzalez with Claude. Data: Athilafinder and TEsorter outputs on the pangenome RDS; TRASH CEN178 annotation; TAIR12 ATHILA exemplars.</footer>

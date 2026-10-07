@@ -49,7 +49,15 @@ fams.sort(key=lambda f: fam[f]["solo"] / sum(fam[f].values()))
 fig, (a1, a2) = plt.subplots(1, 2, figsize=(10, 3.6), gridspec_kw={"width_ratios": [2.2, 1]},
                              facecolor=SURF)
 y = [fam[f]["solo"] / sum(fam[f].values()) for f in fams]
-a1.barh([f.replace("ATHILA", "") for f in fams], y, color=ACC, height=0.62)
+LTRCLS = {"ATHILA5": "centrophilic", "ATHILA1": "centrophilic", "ATHILA2": "centrophobic",
+          "ATHILA4": "centrophobic", "ATHILA4c": "centrophobic", "ATHILA4a": "centrophobic"}
+a1.barh([f.replace("ATHILA", "") + ("" if f in LTRCLS else " (group)") for f in fams], y,
+        color=[CLS[LTRCLS.get(f, "neutral")] for f in fams], height=0.62)
+from matplotlib.patches import Patch
+a1.legend(handles=[Patch(color=CLS["centrophilic"], label="centrophilic"),
+                   Patch(color=CLS["neutral"], label="mixed / neutral group"),
+                   Patch(color=CLS["centrophobic"], label="centrophobic")],
+          frameon=False, fontsize=7.5, loc="lower right")
 for i, (f, v) in enumerate(zip(fams, y)):
     a1.text(v + 0.01, i, f"{v:.2f}  (n={sum(fam[f].values())})", va="center", fontsize=7.5, color=MUTED)
 a1.set_xlim(0, 0.95); a1.set_xlabel("solo LTRs / (solo + intact)")
@@ -90,8 +98,8 @@ a2.annotate("youngest: ATHILA6a×6b\n(half centromeric)", (4, pct[4]), (2.7, 6.1
 save(fig, "age.png")
 
 # ---- microhomology (unique junctions) -------------------------------------- #
-fig, axes = plt.subplots(1, 2, figsize=(10, 3.4), facecolor=SURF)
-for ax, tag, title in zip(axes, ("full", "frag"), ("intact elements", "internal fragments")):
+fig, ax0 = plt.subplots(figsize=(6.2, 3.4), facecolor=SURF)
+for ax, tag, title in zip([ax0], ("full",), ("Athilafinder intact elements",)):
     rows = [l.rstrip("\n").split("\t") for l in open(f"{R}/junctions_{tag}/junctions.tsv")]
     h = rows[0]; J = [dict(zip(h, r)) for r in rows[1:] if r[h.index("class")] == "deletion_clean"]
     uniq = {}
@@ -116,61 +124,62 @@ def rates(tag):
     rows = [l.rstrip("\n").split("\t") for l in open(f"{R}/junctions_{tag}/elements.tsv")]
     h = rows[0]; E = [dict(zip(h, r)) for r in rows[1:]]
     return {k[2:]: np.mean([int(e[k]) for e in E]) * 100 for k in h if k.startswith("n_") and k != "n_pieces"}
-ri, rf = rates("full"), rates("frag")
+ri = rates("full")
 keys = ["deletion_clean", "deletion_with_insert", "internal_family_switch",
         "internal_family_switch_gapped", "inversion", "duplication"]
 names = ["clean deletion", "deletion + insert", "family switch (clean)",
          "family switch (gapped)", "inversion", "duplication"]
-fig, ax = plt.subplots(figsize=(10, 3.4), facecolor=SURF)
+fig, ax = plt.subplots(figsize=(10, 3.2), facecolor=SURF)
 x = np.arange(len(keys))
-ax.bar(x - 0.19, [ri[k] for k in keys], 0.36, color="#9a9890", label="intact elements (n=20,252)")
-ax.bar(x + 0.19, [rf[k] for k in keys], 0.36, color=ACC, label="internal fragments (n=60,667)")
+ax.bar(x, [ri[k] for k in keys], 0.55, color=ACC)
 for i, k in enumerate(keys):
-    ax.text(i - 0.19, ri[k] + 0.1, f"{ri[k]:.1f}", ha="center", fontsize=7, color=MUTED)
-    ax.text(i + 0.19, rf[k] + 0.1, f"{rf[k]:.1f}", ha="center", fontsize=7, color=INK)
-ax.set_xticks(x, names, fontsize=8); ax.set_ylabel("junctions per 100 copies")
-ax.set_title("Rearrangement junctions: intact elements vs fragments")
-ax.legend(frameon=False, fontsize=8); axstyle(ax)
+    ax.text(i, ri[k] + 0.12, f"{ri[k]:.2f}", ha="center", fontsize=7.5, color=INK)
+ax.set_xticks(x, names, fontsize=8); ax.set_ylabel("junctions per 100 elements")
+ax.set_title("Rearrangement junctions in Athilafinder intact elements (n = 20,252)")
+axstyle(ax)
 save(fig, "junction_rates.png")
 
-# ---- fragments per intact by family, and by context ------------------------ #
-rows = [l.rstrip("\n").split("\t") for l in open(f"{R}/fragments/copies_with_context.tsv")]
-h = rows[0]; U = [dict(zip(h, r)) for r in rows[1:]]
-fc = defaultdict(Counter)
-for u in U:
-    if u["label"] in ("full_length", "fragment_internal") and u["internal_family"]:
-        fc[u["internal_family"].replace("ATHILA", "")][u["label"]] += 1
-fl = [f for f in fc if fc[f]["full_length"] >= 50 and f in fam_class]
-fl.sort(key=lambda f: fc[f]["fragment_internal"] / fc[f]["full_length"])
+# ---- internal completeness of Athilafinder intact elements ------------------ #
+rows = [l.rstrip("\n").split("\t") for l in open(f"{R}/junctions_full/elements.tsv")]
+h = rows[0]; E = [dict(zip(h, r)) for r in rows[1:] if r[h.index("internal_family")]]
+ctxmap = {l.split("\t")[0]: l.split("\t")[5] for l in open(f"{R}/centro/element_centro_class.tsv").readlines()[1:]}
+byf = defaultdict(list); byc = defaultdict(list)
+for e in E:
+    c = float(e["internal_consensus_cov"]); f = e["internal_family"].replace("ATHILA", "")
+    byf[f].append(c)
+    if e["query"] in ctxmap:
+        byc[ctxmap[e["query"]]].append(c)
+fl = [f for f in byf if len(byf[f]) >= 100 and f in fam_class]
+fl.sort(key=lambda f: np.mean(np.array(byf[f]) < 0.5))
 fig, (a1, a2) = plt.subplots(1, 2, figsize=(10, 3.8), gridspec_kw={"width_ratios": [2.2, 1]},
                              facecolor=SURF)
-vals = [fc[f]["fragment_internal"] / fc[f]["full_length"] for f in fl]
+vals = [np.mean(np.array(byf[f]) < 0.5) * 100 for f in fl]
 a1.barh(fl, vals, color=[CLS.get(fam_class[f], "#9a9890") for f in fl], height=0.62)
-for i, v in enumerate(vals):
-    a1.text(v + 0.2, i, f"{v:.1f}", va="center", fontsize=7.5, color=MUTED)
-a1.set_xlabel("internal fragments per intact element")
-a1.set_title("How chopped each family is (colour = centro class)")
+for i, (f, v) in enumerate(zip(fl, vals)):
+    a1.text(v + 0.6, i, f"{v:.0f}%  (n={len(byf[f])})", va="center", fontsize=7.5, color=MUTED)
+a1.set_xlim(0, 48); a1.set_xlabel("% of intact elements missing > half of the internal consensus")
+a1.set_title("Heavily deleted intact elements, by family")
 from matplotlib.patches import Patch
 a1.legend(handles=[Patch(color=c, label=k) for k, c in CLS.items()], frameon=False, fontsize=7.5,
           loc="lower right"); axstyle(a1, "x")
-cc = defaultdict(Counter)
-for u in U:
-    cc[u["context"]][u["label"]] += 1
-v = [cc[k]["fragment_internal"] / max(1, cc[k]["full_length"]) for k in ks]
+v = [np.mean(np.array(byc[k]) < 0.5) * 100 for k in ks]
 a2.bar(ks, v, color=[CTX[k] for k in ks], width=0.6)
 for i, x in enumerate(v):
-    a2.text(i, x + 0.08, f"{x:.2f}", ha="center", fontsize=8, color=INK)
+    a2.text(i, x + 0.4, f"{x:.0f}%", ha="center", fontsize=8, color=INK)
 a2.set_title("by context"); a2.tick_params(axis="x", labelsize=8); axstyle(a2)
-save(fig, "fragments.png")
+save(fig, "completeness.png")
 
-# ---- truncation breakpoint density along consensus -------------------------- #
+# ---- where internal deletions fall along the consensus ---------------------- #
 dm = defaultdict(dict)
 for l in open(f"{R}/fragments/domain_map.tsv").readlines()[1:]:
     r, d, x = l.rstrip().split("\t"); dm[r][d] = float(x)
-bp = defaultdict(list)
-for l in open(f"{R}/fragments/truncation_breakpoints.tsv").readlines()[1:]:
-    r, f, x = l.rstrip().split("\t"); bp[r].append(float(x))
-pos = np.concatenate([np.array(v) for r, v in bp.items() if len(dm.get(r, {})) >= 5])
+rows = [l.rstrip("\n").split("\t") for l in open(f"{R}/junctions_full/junctions.tsv")]
+h = rows[0]; J = [dict(zip(h, r)) for r in rows[1:]]
+dels = [j for j in J if j["class"] in ("deletion_clean", "deletion_with_insert") and j["rel_pos_in_consensus1"]]
+n_all = len(dels)
+uniq = {(j["fam1"], round(float(j["rel_pos_in_consensus1"]), 2), round(int(j["size"]), -2)): float(j["rel_pos_in_consensus1"])
+        for j in dels}                     # one entry per distinct deletion (inheritance collapsed)
+pos = np.array(list(uniq.values()))
 fig, ax = plt.subplots(figsize=(10, 2.9), facecolor=SURF)
 hist, edges = np.histogram(pos, bins=40, range=(0, 1))
 ax.bar(edges[:-1], hist / hist.mean(), width=1 / 40, align="edge", color=ACC, edgecolor=SURF, lw=0.6)
@@ -187,8 +196,8 @@ for k in ("GAG", "PROT", "RT", "RH", "INT"):
         ax.text(m, ax.get_ylim()[1] * 0.98, k, ha="center", va="top", fontsize=8, color=INK,
                 bbox=dict(boxstyle="round,pad=0.15", fc=SURF, ec="none"))
 ax.set_xlim(0, 1); ax.set_xlabel("position along family internal consensus (5′ → 3′)")
-ax.set_ylabel("breakpoints / uniform")
-ax.set_title(f"Where internal fragments are cut (n = {len(pos):,} fragment ends; dashed = uniform)")
+ax.set_ylabel("deletion starts / uniform")
+ax.set_title(f"Where internal deletions start in intact elements ({len(pos):,} distinct deletions from {n_all:,} junctions; dashed = uniform)")
 axstyle(ax)
-save(fig, "truncation.png")
+save(fig, "deletion_positions.png")
 print("figures in", OUT, sorted(os.listdir(OUT)))
